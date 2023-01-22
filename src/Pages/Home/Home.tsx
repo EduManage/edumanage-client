@@ -6,29 +6,8 @@ const Home = () => {
         <div className=''>
 
             {/* Header section start  */}
-            <div className="bg-no-repeat bg-right-top pt-20" style={{backgroundImage: `url(${blob})`}}>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
-                <h1>less go</h1>
+            <div className="bg-no-repeat bg-right-top pt-20 h-screen" style={{backgroundImage: `url(${blob})`}}>
+                
             </div>
 
         </div>
