@@ -7,7 +7,7 @@ import yt from '../../Assets/youtube.png'
 
 const Navbar = () => {
     return (
-        <div className='flex items-center w-full pt-10 ease-in-out duration-300 fixed'>
+        <div className='flex items-center w-full pt-5 ease-in-out duration-300 fixed'>
 
             {/* logo and name section on navbar start */}
             <div className='w-full flex justify-center md:w-1/6'>
