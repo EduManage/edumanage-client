@@ -1,8 +1,15 @@
 import React from 'react';
 import blob from '../../Assets/blobHeaderShape.png';
 import headerImg from '../../Assets/homepagePicture.png';
-
+import book from '../../Assets/book1.png';
+import teacher from '../../Assets/Teacher1.png';
+import cap from '../../Assets/cap1.png';
 import './Home.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const Home = () => {
     return (
         <div className=''>
@@ -36,10 +43,44 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className='text-center font-poppins-em py-10'>
+            {/* Header section end  */}
+
+            <div className='text-center font-poppins-em py-16'>
                 <h3 className='text-md text-rose-500/80 font-semibold  pb-5'>WE ARE AWESOME</h3>
                 <h1 className='text-3xl font-bold  pb-8'>15 Years of Experience <br /> in  Education and Teaching</h1>
                 <p className='text-xs text-black/90'>“The more that you read, the more things you will know.<br /> The more that you learn, the more places you’ll go.”</p>
+            </div>
+
+            <div className='flex'>
+                <div className='w-1/6'>
+
+                </div>
+
+                <div className='w-4/6 flex gap-5 text-center mb-10 font-poppins-em '>
+                    <div className='p-5 shadow-lg ' data-aos="fade-right">
+                        <img className='p-5' src={book} alt="" />
+                        <h1 className='pb-5'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+                    </div>
+                    <div className='p-5 shadow-lg'>
+                        <img  className='p-5'  src={teacher} alt="" />
+                        <h1 className='pb-5'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+                    </div>
+                    <div className='p-5 shadow-lg'>
+                        <img  className='p-5'  src={cap} alt="" />
+                        <h1 className='pb-5'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+                    </div>
+
+                </div>
+
+                <div className='w-1/6'>
+
+                </div>
             </div>
 
         </div>
