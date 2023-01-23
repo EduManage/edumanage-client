@@ -63,13 +63,13 @@ const Home = () => {
                         <p className='text-xs text-black/90'>Collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
                     </div>
-                    <div className='p-5 shadow-lg'>
+                    <div className='p-5 shadow-lg' data-aos="fade-up" data-aos-duration="500">
                         <img  className='p-5'  src={teacher} alt="" />
                         <h1 className='pb-5'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
                     </div>
-                    <div className='p-5 shadow-lg'>
+                    <div className='p-5 shadow-lg' data-aos="fade-left">
                         <img  className='p-5'  src={cap} alt="" />
                         <h1 className='pb-5'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
