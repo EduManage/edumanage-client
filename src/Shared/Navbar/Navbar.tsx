@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import fb from '../../Assets/facebook.png'
 import ig from '../../Assets/instagram.png'
 import tw from '../../Assets/twitter.png'
 import yt from '../../Assets/youtube.png'
-
+import './Navbar.css'
 const Navbar = () => {
+    const [navColorChange, setNavColorChange] = useState(false);
+    const changeBackground = () => {
+        if (window.scrollY >= 66) {
+            setNavColorChange(true);
+        }
+        else {
+            setNavColorChange(false);
+        }
+    }
+    useEffect(() => {
+        changeBackground()
+        // adding the event when scroll change background
+        window.addEventListener("scroll", changeBackground)
+      })
+    // window.addEventListener('scroll', changeBackground);
     return (
-        <div className='flex items-center w-full pt-5 ease-in-out duration-300 fixed'>
+        <div className={`flex items-center w-full pt-5 ease-in-out duration-300 font-poppins-em fixed ${navColorChange ? 'bg-white shadow-lg' : 'bg-none' } `}>
 
             {/* logo and name section on navbar start */}
             <div className='w-full flex justify-center md:w-1/6'>
@@ -66,8 +81,8 @@ const Navbar = () => {
                 <img className='w-4' src={ig} alt="" />
                 <img className='w-4' src={tw} alt="" />
                 <img className='w-4' src={yt} alt="" />
-                
-                
+
+
             </div>
             {/* social icon end  */}
 

@@ -57,22 +57,22 @@ const Home = () => {
                 </div>
 
                 <div className='w-4/6 flex gap-5 text-center mb-10 font-poppins-em '>
-                    <div className='p-5 shadow-lg ' data-aos="fade-right">
+                    <div className='p-5 shadow-lg rounded-2xl ' data-aos="fade-right">
                         <img className='p-5' src={book} alt="" />
-                        <h1 className='pb-5'>Learn Everything</h1>
+                        <h1 className='pb-5 font-semibold'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>Collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
                     </div>
-                    <div className='p-5 shadow-lg' data-aos="fade-up" data-aos-duration="500">
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-up" data-aos-duration="500">
                         <img  className='p-5'  src={teacher} alt="" />
-                        <h1 className='pb-5'>Learn Everything</h1>
-                        <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
+                        <h1 className='pb-5  font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Providing students with personalized, learning experiences in a challenging and supportive environment.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
                     </div>
-                    <div className='p-5 shadow-lg' data-aos="fade-left">
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-left">
                         <img  className='p-5'  src={cap} alt="" />
-                        <h1 className='pb-5'>Learn Everything</h1>
-                        <p className='text-xs text-black/90'>collection of educational materials designed to help individuals acquire new knowledge, skills or abilities.</p>
+                        <h1 className='pb-5 font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
                     </div>
 
