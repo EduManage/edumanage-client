@@ -73,28 +73,13 @@ const Home = () => {
                 <div className="md:w-1/6"></div>
 
                 <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em px-10 md:px-0">
-                    <div className="p-5 shadow-lg rounded-2xl bg-white " data-aos="fade-right">
-                        <img className="p-5" src={book} alt="" />
-                        <h1 className="pb-5 font-semibold">Learn Everything</h1>
-                        <p className="text-xs text-black/90">
-                            Collection of educational materials designed to help individuals
-                            acquire new knowledge, skills or abilities.
-                        </p>
-                        <button className="text-teal-500 text-sm pt-8">READ MORE</button>
-                    </div>
 
-                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-up" data-aos-duration="500">
-                        <img className='p-5' src={teacher} alt="" />
-                        <h1 className='pb-5  font-semibold'>Learn Everything</h1>
-                        <p className='text-xs text-black/90'>Providing students with personalized, learning experiences in a challenging and supportive environment.</p>
-                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
-                    </div>
                     <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-left">
                         <img className='p-5' src={cap} alt="" />
                         <h1 className='pb-5 font-semibold'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
-
+                    </div>
                     <div
                         className="p-5 shadow-lg rounded-2xl bg-white"
                         data-aos="fade-up"
@@ -118,8 +103,10 @@ const Home = () => {
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
 
                     </div>
-                </div>
 
+
+
+                </div>
                 <div className="md:w-1/6"></div>
             </div>
 
@@ -149,7 +136,7 @@ const Home = () => {
                 <div className="flex justify-center text-white font-poppins-em mb-16 px-3 md:px-0">
                     <div className="w-full md:w-4/6 flex flex-col lg:flex-row  justify-center lg:gap-5">
 
-                        
+
                         <div className="flex lg:w-1/2 justify-center gap-5 mb-5 lg:mb-0 ">
                             {/* card col 1 */}
                             <div className="w-1/2">
@@ -218,6 +205,8 @@ const Home = () => {
                             </div>
                         </div>
 
+
+
                     </div>
 
                 </div>
@@ -227,8 +216,8 @@ const Home = () => {
             <JoinWithUs />
             <JoinToday />
             <HeroSec1 />
-            <HeroSec2/>
-        </div>
+            <HeroSec2 />
+        </div >
     );
 };
 
