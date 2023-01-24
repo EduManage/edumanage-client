@@ -80,14 +80,14 @@ const Footer = () => {
                   </label>
                   <input
                     type="email"
-                    className=" my-2 p-1 rounded-l"
+                    className=" my-2 p-1 rounded w-full"
                     {...register("email", { required: true })}
                   />
                   {errors.email && (
                     <p className="text-red-500">Email is required</p>
                   )}
                   <input
-                    className="bg-violet-700 hover:bg-violet-400  text-white hover:text-black mt-5  font-bold  rounded-r p-1"
+                    className="bg-violet-700 hover:bg-violet-400  text-white hover:text-black mt-1 font-bold  rounded w-full p-1"
                     type="submit"
                     value={`Start Free Trial`}
                   />
