@@ -18,12 +18,12 @@ const Home = () => {
             {/* Header section start  */}
 
             <div
-                className="bg-no-repeat bg-right-top pt-20 pb-10 h-screen flex"
+                className="bg-no-repeat bg-right-top pt-20 pb-10 flex"
                 style={{ backgroundImage: `url(${blob})` }}
             >
-                <div className="w-1/6"></div>
-                <div className="w-5/6  flex items-center">
-                    <div className="w-2/5">
+                <div className=" md:w-1/6"></div>
+                <div className="w-full md:w-5/6 flex flex-col md:flex-row items-center p-10 md:p-0">
+                    <div className="w-full md:w-2/5 pb-10 md:pb-0">
                         <h3 className="text-lg text-rose-500/80 font-semibold font-poppins-em">
                             LEARN WITH EM
                         </h3>
@@ -40,7 +40,7 @@ const Home = () => {
                             EXPLORE
                         </button>
                     </div>
-                    <div className="w-3/5">
+                    <div className="w-full md:w-3/5">
                         <img className="px-5" src={headerImg} alt="" />
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const Home = () => {
             <div className="flex bg-no-repeat bg-bottom" style={{ backgroundImage: `url(${wave1})` }}>
                 <div className="md:w-1/6"></div>
 
-                <div className="md:w-4/6 flex gap-5 text-center mb-10 font-poppins-em ">
+                <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em px-10 md:px-0">
                     <div className="p-5 shadow-lg rounded-2xl bg-white " data-aos="fade-right">
                         <img className="p-5" src={book} alt="" />
                         <h1 className="pb-5 font-semibold">Learn Everything</h1>
