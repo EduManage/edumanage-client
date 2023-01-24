@@ -116,7 +116,7 @@ const Home = () => {
                     </h1>
                     <p className="text-xs text-black/90">
                         “The more that you read, the more things you will know.
-                        <br /> The more that you learn, the more places you’ll go.”
+                        <br /> The more that you learn, the more places you'll go.”
                     </p>
                 </div>
 
