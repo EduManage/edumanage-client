@@ -98,17 +98,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center py-5 bg-gray-800 text-gray-200">
-        <div>
-          <div>
-            <p>
-              Copyright{" "}
-              <strong>
-                <span>EduManage</span>
-              </strong>
-              . All Rights Reserved
-            </p>
-          </div>
-        </div>
+        
       </div>
     </footer>
   );

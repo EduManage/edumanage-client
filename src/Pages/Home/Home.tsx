@@ -1,16 +1,23 @@
-import React from "react";
-import blob from "../../Assets/blobHeaderShape.png";
-import headerImg from "../../Assets/homepagePicture.png";
-import book from "../../Assets/book1.png";
-import teacher from "../../Assets/Teacher1.png";
-import cap from "../../Assets/cap1.png";
+
+import React from 'react';
+import blob from '../../Assets/blobHeaderShape.png';
+import headerImg from '../../Assets/homepagePicture.png';
+import book from '../../Assets/book1.png';
+import teacher from '../../Assets/Teacher1.png';
+import cap from '../../Assets/cap1.png';
+import './Home.css'
+import JoinWithUs from '../../Shared/JoinWithUsBanner/JoinWithUs';
+import JoinToday from '../../Shared/joinToday/joinToday';
+import HeroSec1 from '../../Shared/HeroSec1/HeroSec1';
+import HeroSec2 from '../../Shared/HeroSec1/HeroSec2/HeroSec2';
+
 import wave1 from "../../Assets/waveOpacity-8.svg";
 import wave2 from "../../Assets/wave-2.svg";
 import "./Home.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-AOS.init();
+
+
 
 const Home = () => {
     return (
@@ -75,6 +82,19 @@ const Home = () => {
                         </p>
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
                     </div>
+
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-up" data-aos-duration="500">
+                        <img className='p-5' src={teacher} alt="" />
+                        <h1 className='pb-5  font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Providing students with personalized, learning experiences in a challenging and supportive environment.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+                    </div>
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-left">
+                        <img className='p-5' src={cap} alt="" />
+                        <h1 className='pb-5 font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+
                     <div
                         className="p-5 shadow-lg rounded-2xl bg-white"
                         data-aos="fade-up"
@@ -96,6 +116,7 @@ const Home = () => {
                             abilities through a certification program.
                         </p>
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
+
                     </div>
                 </div>
 
@@ -119,6 +140,9 @@ const Home = () => {
                         <br /> The more that you learn, the more places you'll go.”
                     </p>
                 </div>
+
+
+                <div className='w-1/6'></div>
 
                 {/* pic a course card section start  */}
 
@@ -195,11 +219,15 @@ const Home = () => {
                         </div>
 
                     </div>
+
                 </div>
 
                 {/* pic a course card section end  */}
             </div>
-
+            <JoinWithUs />
+            <JoinToday />
+            <HeroSec1 />
+            <HeroSec2/>
         </div>
     );
 };
