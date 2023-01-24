@@ -30,7 +30,7 @@ const Footer = () => {
               </address>
             </div>
             <div className="mb-5">
-              <h4 className="text-2xl">IMPORTANT LINKS</h4>
+              <h4 className="text-2xl">Important Link</h4>
               <ul>
                 <li className="hover:text-violet-400 hover:font-bold">Home</li>
                 <li className="hover:text-violet-400 hover:font-bold">
