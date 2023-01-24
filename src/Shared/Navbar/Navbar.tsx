@@ -5,6 +5,7 @@ import ig from "../../Assets/instagram.png";
 import tw from "../../Assets/twitter.png";
 import yt from "../../Assets/youtube.png";
 import "./Navbar.css";
+
 const Navbar = () => {
   const [navColorChange, setNavColorChange] = useState(false);
   const changeBackground = () => {
