@@ -7,10 +7,13 @@ interface IFormInput {
 
 const Footer = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return (
         <div>
             .
 =======
+=======
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
   const {
     register,
     handleSubmit,
@@ -100,21 +103,14 @@ const Footer = () => {
               </form>
             </div>
           </div>
+<<<<<<< HEAD
 >>>>>>> c49d6519c8a987b710ee56445a5cd45ebb819cb9
+=======
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
         </div>
       </div>
       <div className="text-center py-5 bg-gray-800 text-gray-200">
-        <div>
-          <div>
-            <p>
-              Copyright{" "}
-              <strong>
-                <span>EduManage</span>
-              </strong>
-              . All Rights Reserved
-            </p>
-          </div>
-        </div>
+        
       </div>
     </footer>
   );

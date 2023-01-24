@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
 import React from 'react';
 import blob from '../../Assets/blobHeaderShape.png';
 import headerImg from '../../Assets/homepagePicture.png';
@@ -10,6 +14,7 @@ import JoinWithUs from '../../Shared/JoinWithUsBanner/JoinWithUs';
 import JoinToday from '../../Shared/joinToday/joinToday';
 import HeroSec1 from '../../Shared/HeroSec1/HeroSec1';
 import HeroSec2 from '../../Shared/HeroSec1/HeroSec2/HeroSec2';
+<<<<<<< HEAD
 =======
 import React from "react";
 import blob from "../../Assets/blobHeaderShape.png";
@@ -17,13 +22,20 @@ import headerImg from "../../Assets/homepagePicture.png";
 import book from "../../Assets/book1.png";
 import teacher from "../../Assets/Teacher1.png";
 import cap from "../../Assets/cap1.png";
+=======
+
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
 import wave1 from "../../Assets/waveOpacity-8.svg";
 import wave2 from "../../Assets/wave-2.svg";
 import "./Home.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+<<<<<<< HEAD
 >>>>>>> c49d6519c8a987b710ee56445a5cd45ebb819cb9
 // ..
+=======
+
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
 
 
 const Home = () => {
@@ -89,6 +101,19 @@ const Home = () => {
                         </p>
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
                     </div>
+
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-up" data-aos-duration="500">
+                        <img className='p-5' src={teacher} alt="" />
+                        <h1 className='pb-5  font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Providing students with personalized, learning experiences in a challenging and supportive environment.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+                    </div>
+                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-left">
+                        <img className='p-5' src={cap} alt="" />
+                        <h1 className='pb-5 font-semibold'>Learn Everything</h1>
+                        <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
+                        <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
+
                     <div
                         className="p-5 shadow-lg rounded-2xl bg-white"
                         data-aos="fade-up"
@@ -110,9 +135,11 @@ const Home = () => {
                             abilities through a certification program.
                         </p>
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
+
                     </div>
                 </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div className='w-4/6 flex gap-5 text-center mb-10 font-poppins-em '>
                     <div className='p-5 shadow-lg rounded-2xl ' data-aos="fade-right">
@@ -137,6 +164,10 @@ const Home = () => {
                 <div className="md:w-1/6"></div>
             </div>
 >>>>>>> c49d6519c8a987b710ee56445a5cd45ebb819cb9
+=======
+                <div className="md:w-1/6"></div>
+            </div>
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
 
             {/* 3 column cards end */}
 
@@ -157,8 +188,14 @@ const Home = () => {
                 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div className='w-1/6'>
 =======
+=======
+
+                <div className='w-1/6'></div>
+
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
                 {/* pic a course card section start  */}
 
                 <div className="flex justify-center text-white font-poppins-em mb-16 px-3 md:px-0">
@@ -234,7 +271,11 @@ const Home = () => {
                         </div>
 
                     </div>
+<<<<<<< HEAD
 >>>>>>> c49d6519c8a987b710ee56445a5cd45ebb819cb9
+=======
+
+>>>>>>> 08a34a5b9526d6d902fb58cdc8c53ae27402167a
                 </div>
 
                 {/* pic a course card section end  */}
