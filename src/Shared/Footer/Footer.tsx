@@ -87,7 +87,7 @@ const Footer = () => {
                     <p className="text-red-500">Email is required</p>
                   )}
                   <input
-                    className="bg-violet-700 hover:bg-violet-400  text-white hover:text-black mt-1 font-bold  rounded w-full p-1"
+                    className="bg-violet-700 hover:bg-violet-400  text-white hover:text-black mt-1 font-bold rounded w-full p-1"
                     type="submit"
                     value={`Start Free Trial`}
                   />
