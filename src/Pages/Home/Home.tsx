@@ -6,10 +6,10 @@ import book from '../../Assets/book1.png';
 import teacher from '../../Assets/Teacher1.png';
 import cap from '../../Assets/cap1.png';
 import './Home.css'
-import JoinWithUs from '../../Shared/JoinWithUsBanner/JoinWithUs';
-import JoinToday from '../../Shared/joinToday/joinToday';
-import HeroSec1 from '../../Shared/HeroSec1/HeroSec1';
-import HeroSec2 from '../../Shared/HeroSec1/HeroSec2/HeroSec2';
+import JoinWithUs from '../../Components/JoinWithUsBanner/JoinWithUs';
+import JoinToday from '../../Components/joinToday/joinToday';
+import HeroSec1 from '../../Components/HeroSec1/HeroSec1';
+import HeroSec2 from '../../Components/HeroSec2/HeroSec2';
 
 import wave1 from "../../Assets/waveOpacity-8.svg";
 import wave2 from "../../Assets/wave-2.svg";
