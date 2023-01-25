@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -35,22 +35,22 @@ export const router = createBrowserRouter([
     element: <AdminDashboard></AdminDashboard>,
     children: [
       {
-          path: "/admin/add-students", 
-          element: <AddStudent></AddStudent>
+        path: "/admin/add-students",
+        element: <AddStudent></AddStudent>
       },
       {
-        path: "/admin/all-students", 
+        path: "/admin/all-students",
         element: <AllStudents></AllStudents>
       },
       {
-        path: "/admin/add-teachers", 
+        path: "/admin/add-teachers",
         element: <AddTeachers></AddTeachers>
-    },
-    {
-        path: "/admin/all-teachers", 
+      },
+      {
+        path: "/admin/all-teachers",
         element: <AllTeachers></AllTeachers>
-    },
-  ]
+      },
+    ]
   }
 ]);
 
