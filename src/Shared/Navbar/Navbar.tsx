@@ -42,22 +42,22 @@ const Navbar = () => {
 
             {/* route names start  */}
             <div className={`w-full flex absolute md:static bg-white md:bg-transparent duration-300 py-2 md:py-0 ease-in flex-col md:flex-row justify-start text-center md:w-3/6 text-xs gap-5 font-medium ${open ? 'top-[-250px]' : 'top-20 '}`}>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">HOME</Link>
                 </div>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">ABOUT</Link>
                 </div>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">COURSE</Link>
                 </div>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">INSTRUCTOR</Link>
                 </div>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">NEWS</Link>
                 </div>
-                <div>
+                <div className="hover-underline-animation">
                     <Link to="/">CONTRACT</Link>
                 </div>
             </div>
