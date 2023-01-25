@@ -1,22 +1,42 @@
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../UserContext/UserContext";
 // import "./Login.css";
 
-interface IFormInput {
-  email: string;
-  password: string;
-  age: number;
-}
-
+const googleProvider = new GoogleAuthProvider();
 const Login = () => {
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from2 = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInput>();
-  const handleLoging: SubmitHandler<IFormInput> = (data) => {
+  } = useForm();
+  const logInHandle = (data) => {
     console.log(data);
+    signIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login success !!!");
+        navigate(from2, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const UserGoogle = () => {
+    signInWithGoogle(googleProvider)
+      .then((resul) => {
+        const user = resul.user;
+        toast.success("Login success with Google!!!");
+        navigate(from2, { replace: true });
+      })
+      .catch((e) => console.error(e));
   };
   return (
     <div className="h-[800px] flex justify-center items-center">
@@ -25,7 +45,7 @@ const Login = () => {
           <h2>Login Now</h2>
         </div>
         <div className="p-7 text-left">
-          <form onSubmit={handleSubmit(handleLoging)}>
+          <form onSubmit={handleSubmit(logInHandle)}>
             <div className="form-control w-full ">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -61,12 +81,15 @@ const Login = () => {
           </form>
           <p className="mt-5">
             New to Our Page{" "}
-            <Link className="text-sm text-violet-700" to={"/singup"}>
+            <Link className="text-sm text-violet-700" to={"/signup"}>
               Creat new Account
             </Link>
           </p>
           <div className="divider"></div>
-          <button className="bg-pink-500 hover:bg-pink-200 text-white hover:text-black font-bold my-3 p-2 rounded-lg w-full">
+          <button
+            onClick={UserGoogle}
+            className="bg-pink-500 hover:bg-pink-200 text-white hover:text-black font-bold my-3 p-2 rounded-lg w-full"
+          >
             CONTINUE WITH GOOGLE
           </button>
         </div>
