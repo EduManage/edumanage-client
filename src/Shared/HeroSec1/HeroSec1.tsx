@@ -1,6 +1,5 @@
 import girl1 from '../../Assets/girl1.jpg'
 import girl2 from '../../Assets/girl2.jpg'
-import ButtonOne from '../../component/ButtonOne';
 
 const HeroSec1 = () => {
     return (
