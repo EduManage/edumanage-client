@@ -8,6 +8,8 @@ import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeac
 import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
+import News from "../../Pages/News/News";
+import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 
@@ -30,8 +32,18 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
+
+        path: "/news",
+        element: <News></News>
+      },
+      {
+        path: "/news/:id",
+        element: <NewsDetails></NewsDetails>
+},
+{
         path: "/courses",
         element: <Courses></Courses> ,
+
       },
     ],
   },
@@ -58,4 +70,3 @@ export const router = createBrowserRouter([
     ]
   }
 ]);
-

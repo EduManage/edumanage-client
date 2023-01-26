@@ -22,9 +22,9 @@ const AdminDashboard = () => {
       </div>
         <Menu 
          transitionDuration={700}
-         renderExpandIcon={({ open }) => <span>{open ? <BsChevronDown className={`forward-arrow ${collapsed === true && 'hidden'}`} /> : <BsChevronRight className={`backward-arrow ${collapsed === true && 'hidden'}`} />}</span>}
+         renderExpandIcon={({ open }: any) => <span>{open ? <BsChevronDown className={`forward-arrow ${collapsed === true && 'hidden'}`} /> : <BsChevronRight className={`backward-arrow ${collapsed === true && 'hidden'}`} />}</span>}
          menuItemStyles={{
-          button: ({ level, active, disabled }) => {
+          button: ({ level, active, disabled }: any) => {
             // only apply styles on first level elements of the tree
             if (level === 0)
               return {
