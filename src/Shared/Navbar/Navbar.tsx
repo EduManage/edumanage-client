@@ -4,6 +4,7 @@ import fb from "../../Assets/facebook.png";
 import ig from "../../Assets/instagram.png";
 import tw from "../../Assets/twitter.png";
 import yt from "../../Assets/youtube.png";
+import em from '../../Assets/navEM.png'
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -24,7 +25,7 @@ const Navbar = () => {
     // window.addEventListener('scroll', changeBackground);
     return (
         <div
-            className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-0 ease-in-out duration-300 font-poppins-em fixed ${navColorChange ? "bg-white shadow-lg" : "bg-white md:bg-transparent"
+            className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-3 ease-in-out duration-300 font-poppins-em fixed ${navColorChange ? "bg-white shadow-lg" : "bg-white md:bg-transparent"
                 } `}
         >
             {/* logo and name section on navbar start */}
@@ -32,7 +33,7 @@ const Navbar = () => {
                 <Link to="/" className="flex cursor-pointer items-center ">
                     <img
                         className="object-cover w-12"
-                        src="https://img.freepik.com/premium-vector/abstract-em-initials-monogram-logo-design-line-art-icon-business-template-simple-elegant_619996-206.jpg?w=2000"
+                        src={em}
                         alt="logo"
                     />
                     {/* <span className="text-lg font-black text-gray-900 z-20">EduManage</span> */}
@@ -49,7 +50,7 @@ const Navbar = () => {
                     <Link to="/">ABOUT</Link>
                 </div>
                 <div className="hover-underline-animation">
-                    <Link to="/">COURSE</Link>
+                    <Link to="/courses">COURSE</Link>
                 </div>
                 <div className="hover-underline-animation">
                     <Link to="/">INSTRUCTOR</Link>
