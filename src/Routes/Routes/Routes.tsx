@@ -7,6 +7,7 @@ import AddTeachers from "../../Pages/AdminDashboard/Teachers/AddTeachers/AddTeac
 import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeachers";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
+import News from "../../Pages/News/News";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/news",
+        element: <News></News>
       },
     ],
   },

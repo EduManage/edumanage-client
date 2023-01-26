@@ -72,12 +72,6 @@ const Home = () => {
 
             <div className="flex flex-col items-center bg-no-repeat bg-bottom" style={{ backgroundImage: `url(${wave1})` }}>
 
-<<<<<<< HEAD
-                <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em px-10 md:px-0">
-
-                    <div className='p-5 shadow-lg rounded-2xl' data-aos="fade-left">
-                        <img className='p-5' src={cap} alt="" />
-=======
 
                 <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em p-10 md:px-0">
 
@@ -86,7 +80,6 @@ const Home = () => {
                         data-aos-duration="500"
                     >
                         <img className='p-5' src={book} alt="" />
->>>>>>> c212656620b689fe210e98acd6ee4cea839c5a70
                         <h1 className='pb-5 font-semibold'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
@@ -118,19 +111,11 @@ const Home = () => {
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
 
                     </div>
-<<<<<<< HEAD
-
-
-
-                </div>
-                <div className="md:w-1/6"></div>
-=======
 
 
 
                 </div>
 
->>>>>>> c212656620b689fe210e98acd6ee4cea839c5a70
             </div>
 
             {/* 3 column cards end */}
@@ -237,17 +222,12 @@ const Home = () => {
                 {/* pic a course card section end  */}
             </div>
             <JoinToday />
-<<<<<<< HEAD
-            <HeroSec1 />
-            <HeroSec2 />
-=======
             <div className='px-10 md:px-0'>
                 <JoinWithUs />
 
                 <HeroSec1 />
                 <HeroSec2 />
             </div>
->>>>>>> c212656620b689fe210e98acd6ee4cea839c5a70
         </div >
     );
 };
