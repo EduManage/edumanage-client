@@ -15,9 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ProSidebarProvider>
-      <UserContext>
-        <App />
-      </UserContext>
+      <App />
     </ProSidebarProvider>
   </React.StrictMode>
 );
