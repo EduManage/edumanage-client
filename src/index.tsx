@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { ProSidebarProvider } from "react-pro-sidebar";
 import UserContext from "./UserContext/UserContext";
+
 AOS.init();
 
 const root = ReactDOM.createRoot(
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ProSidebarProvider>
+      <UserContext>
         <App />
+      </UserContext>
     </ProSidebarProvider>
   </React.StrictMode>
 );
