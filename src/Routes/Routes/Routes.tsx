@@ -12,6 +12,7 @@ import News from "../../Pages/News/News";
 import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
+import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse'
 
 export const router = createBrowserRouter([
   {
@@ -39,10 +40,16 @@ export const router = createBrowserRouter([
       {
         path: "/news/:id",
         element: <NewsDetails></NewsDetails>
-},
-{
+      },
+      {
         path: "/courses",
-        element: <Courses></Courses> ,
+        element: <Courses></Courses>,
+
+      },
+      {
+        path: "/courses/:id",
+        element: <SingleCourse/> ,
+        loader: ({params}) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
 
       },
     ],
