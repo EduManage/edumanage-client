@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
 export const Input = styled.input`
     border: 1px solid #ddd;
     color: #000000;
