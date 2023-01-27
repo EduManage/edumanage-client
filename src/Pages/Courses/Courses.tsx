@@ -4,7 +4,7 @@ import { BsFillGrid3X3GapFill, BsChevronDown } from "react-icons/bs";
 import MainCourses from './MainCourses/MainCourses';
 import { useQuery } from 'react-query';
 import { useFormState } from 'react-hook-form';
-
+import homeBg from '../../Assets/homebg.png'
 const Courses = () => {
     // const [courses, setCoursess] = useFormState([])
     // useEffect(() => {
@@ -12,13 +12,14 @@ const Courses = () => {
     //         .then(res => res.json())
     //         .then(data => setCoursess(data))
     // }, [])
-        return(
+    return (
         <div>
-            <div className='bg-white pb-28 pt-40 text-center shadow-lg'>
+            <div className=' pb-28 pt-40 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
+                style={{ backgroundImage: `url(${homeBg})` }}>
                 <h1 className='text-4xl font-bold'>Our Courses</h1>
                 <p className='font-semibold'>Home - Courses</p>
             </div>
-            <div className='w-full flex justify-center items-center pt-10'>
+            <div className='w-full flex justify-center items-center pt-10 font-poppins-em'>
                 <div className='w-3/4 flex '>
                     {/* left catagories bar start  */}
                     <div className='w-1/3'>
@@ -39,7 +40,7 @@ const Courses = () => {
                                 <BsChevronDown />
                             </div>
                         </div>
-                        <MainCourses/>
+                        <MainCourses />
                     </div>
                     {/* content section end  */}
 
