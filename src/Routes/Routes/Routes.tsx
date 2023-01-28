@@ -9,15 +9,13 @@ import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeac
 import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
-import AllInstructor from "../../Pages/Instructor/AllInstructor/AllInstructor";
-import TeacherDeatils from "../../Pages/Instructor/TeacherDetails/TeacherDeatils";
 import News from "../../Pages/News/News";
 import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
-import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse'
+import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse';
 import AllInstructor from "../../Pages/AdminDashboard/Instructor/AllInstructor/AllInstructor";
-import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils";
+import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils"
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +57,9 @@ export const router = createBrowserRouter([
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`),
 
+      },
+      {
+
         path: "/news",
         element: <News></News>
       },
@@ -81,14 +82,10 @@ export const router = createBrowserRouter([
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
       },
-      // {
-      //   path: "/about",
-      //   element: <About></About>,
-      // },
       {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
-        loader: ({ params }) =>fetch(`http://localhost:5000/instructorDetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
       }
     ],
   },

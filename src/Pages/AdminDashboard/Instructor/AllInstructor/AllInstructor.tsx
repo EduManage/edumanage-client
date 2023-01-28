@@ -16,13 +16,13 @@ const AllInstructor = () => {
   // console.log(allInstructor);
   const [instructor, setinstructor] = useState<any[]>([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/instructor`)
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructor`)
       .then((res) => res.json())
       .then((data) => setinstructor(data));
   }, []);
   const handleInstructor = (tata: any) => {
     const instructorID = tata.id;
-    fetch(`http://localhost:5000/instructorDetails`, {
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
