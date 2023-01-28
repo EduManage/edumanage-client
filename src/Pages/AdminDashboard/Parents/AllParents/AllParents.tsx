@@ -4,7 +4,7 @@ import male from "./../../../../assets/Students/male.png";
 import female from "./../../../../assets/Students/female.png";
 import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
-import Loader from '../../../../SharedPage/Loader/Loader';
+import Loader from '../../../../Shared/Loader/Loader';
 
 const AllParents = () => {
     useTitle("All parentss")

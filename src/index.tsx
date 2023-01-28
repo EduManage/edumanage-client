@@ -7,12 +7,12 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { ProSidebarProvider } from "react-pro-sidebar";
 import UserContext from "./UserContext/UserContext";
-
-AOS.init();
 import {
   QueryClient, QueryClientProvider
 } from '@tanstack/react-query'
 
+AOS.init();
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

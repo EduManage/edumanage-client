@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AdminDashboard from "../../Layout/AdminDashboard/AdminDashboard";
 import Main from "../../Layout/Main/Main";
 import About from "../../Pages/About/About";
-import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
-import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
+
 import AddTeachers from "../../Pages/AdminDashboard/Teachers/AddTeachers/AddTeachers";
 import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeachers";
 import Courses from "../../Pages/Courses/Courses";
@@ -93,14 +92,14 @@ export const router = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard></AdminDashboard>,
     children: [
-      {
-        path: "/admin/add-students",
-        element: <AddStudent></AddStudent>,
-      },
-      {
-        path: "/admin/all-students",
-        element: <AllStudents></AllStudents>,
-      },
+      // {
+      //   path: "/admin/add-students",
+      //   element: <AddStudent></AddStudent>,
+      // },
+      // {
+      //   path: "/admin/all-students",
+      //   element: <AllStudents></AllStudents>,
+      // },
       {
         path: "/admin/add-teachers",
         element: <AddTeachers></AddTeachers>,
