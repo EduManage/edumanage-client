@@ -119,16 +119,16 @@ const Navbar = () => {
             </div>
             {/* auth section end */}
 
-            {/* social icon start  */}
-            <div className="w-1/6 hidden md:flex justify-center items-center gap-2 font-medium">
-                <img className="w-4" src={fb} alt="" />
-                <img className="w-4" src={ig} alt="" />
-                <img className="w-4" src={tw} alt="" />
-                <img className="w-4" src={yt} alt="" />
-            </div>
-            {/* social icon end  */}
-        </div>
-    );
+      {/* social icon start  */}
+      <div className="w-1/6 hidden md:flex justify-center items-center gap-2 font-medium">
+        <img className="w-4" src={fb} alt="" />
+        <img className="w-4" src={ig} alt="" />
+        <img className="w-4" src={tw} alt="" />
+        <img className="w-4" src={yt} alt="" />
+      </div>
+      {/* social icon end  */}
+    </div>
+  );
 };
 
 export default Navbar;
