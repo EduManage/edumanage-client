@@ -6,10 +6,10 @@ import book from '../../Assets/book1.png';
 import teacher from '../../Assets/Teacher1.png';
 import cap from '../../Assets/cap1.png';
 import './Home.css'
-import JoinWithUs from '../../Shared/JoinWithUsBanner/JoinWithUs';
-import JoinToday from '../../Shared/joinToday/joinToday';
-import HeroSec1 from '../../Shared/HeroSec1/HeroSec1';
-import HeroSec2 from '../../Shared/HeroSec1/HeroSec2/HeroSec2';
+import JoinWithUs from '../../Components/JoinWithUsBanner/JoinWithUs';
+import JoinToday from '../../Components/joinToday/joinToday';
+import HeroSec1 from '../../Components/HeroSec1/HeroSec1';
+import HeroSec2 from '../../Components/HeroSec2/HeroSec2';
 
 import wave1 from "../../Assets/waveOpacity-8.svg";
 import wave2 from "../../Assets/wave-2.svg";
@@ -29,7 +29,7 @@ const Home = () => {
                 style={{ backgroundImage: `url(${blob})` }}
             >
                 <div className=" md:w-1/6"></div>
-                <div className="w-full md:w-5/6 flex flex-col md:flex-row items-center p-10 md:p-0">
+                <div className="w-full md:w-5/6 flex flex-col md:flex-row items-center  p-10 md:px-0 md:py-20 ">
                     <div className="w-full md:w-2/5 pb-10 md:pb-0">
                         <h3 className="text-lg text-rose-500/80 font-semibold font-poppins-em">
                             LEARN WITH EM
@@ -51,6 +51,7 @@ const Home = () => {
                         <img className="px-5" src={headerImg} alt="" />
                     </div>
                 </div>
+                
             </div>
             {/* Header section end  */}
 
@@ -69,13 +70,16 @@ const Home = () => {
 
             {/* 3 column cards start */}
 
-            <div className="flex bg-no-repeat bg-bottom" style={{ backgroundImage: `url(${wave1})` }}>
-                <div className="md:w-1/6"></div>
+            <div className="flex flex-col items-center bg-no-repeat bg-bottom" style={{ backgroundImage: `url(${wave1})` }}>
 
-                <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em px-10 md:px-0">
 
-                    <div className='p-5 shadow-lg rounded-2xl bg-white' data-aos="fade-left">
-                        <img className='p-5' src={cap} alt="" />
+                <div className="w-full md:w-4/6 flex flex-col md:flex-row gap-5 text-center mb-10 font-poppins-em p-10 md:px-0">
+
+                    <div className='p-5 shadow-lg rounded-2xl bg-white'
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                    >
+                        <img className='p-5' src={book} alt="" />
                         <h1 className='pb-5 font-semibold'>Learn Everything</h1>
                         <p className='text-xs text-black/90'>Obtaining an official recognition of one's knowledge, skills, and abilities through a certification program.</p>
                         <button className='text-teal-500 text-sm pt-8'>READ MORE</button>
@@ -93,7 +97,11 @@ const Home = () => {
                         </p>
                         <button className="text-teal-500 text-sm pt-8">READ MORE</button>
                     </div>
-                    <div className="p-5 shadow-lg rounded-2xl bg-white" data-aos="fade-left">
+                    <div
+                        className="p-5 shadow-lg rounded-2xl bg-white"
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                    >
                         <img className="p-5" src={cap} alt="" />
                         <h1 className="pb-5 font-semibold">Get Certified</h1>
                         <p className="text-xs text-black/90">
@@ -107,7 +115,7 @@ const Home = () => {
 
 
                 </div>
-                <div className="md:w-1/6"></div>
+
             </div>
 
             {/* 3 column cards end */}
@@ -216,7 +224,7 @@ const Home = () => {
             <JoinToday />
             <div className='px-10 md:px-0'>
                 <JoinWithUs />
-                
+
                 <HeroSec1 />
                 <HeroSec2 />
             </div>
