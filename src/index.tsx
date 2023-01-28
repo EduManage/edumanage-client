@@ -7,6 +7,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { ProSidebarProvider } from 'react-pro-sidebar';
 AOS.init();
+import {
+  QueryClient, QueryClientProvider
+} from '@tanstack/react-query'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ProSidebarProvider>
-      <App />
+      <QueryClientProvider client={queryClient}>
+       <App />
+      </QueryClientProvider>
     </ProSidebarProvider>
   </React.StrictMode>
 );
