@@ -9,6 +9,9 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import UserContext from "./UserContext/UserContext";
 
 AOS.init();
+import {
+  QueryClient, QueryClientProvider
+} from '@tanstack/react-query'
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,9 +19,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ProSidebarProvider>
-      <UserContext>
+
+      <QueryClientProvider client={queryClient}>
+       <UserContext>
         <App />
       </UserContext>
+      </QueryClientProvider>
+
     </ProSidebarProvider>
   </React.StrictMode>
 );

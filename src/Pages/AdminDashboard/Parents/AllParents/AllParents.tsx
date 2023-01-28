@@ -6,36 +6,36 @@ import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../../../SharedPage/Loader/Loader';
 
-const AllTeachers = () => {
-    useTitle("All Teachers")
+const AllParents = () => {
+    useTitle("All parentss")
     const [query, setQuery] = useState({
       name: "",
       email: "",
-      parentName: ""
+      phone: ""
     })
-    const { isLoading, data: teachers=[] } = useQuery({
-      queryKey: ['teachers'],
+    const { isLoading, data: parents=[] } = useQuery({
+      queryKey: ['parents'],
       queryFn: async () =>
-        await fetch(`${process.env.REACT_APP_API_URL}/teachers`)
+        await fetch(`${process.env.REACT_APP_API_URL}/parents`)
         .then((res) => res.json())
         .then((data)=>data.data)
   })
     return (
         <div className="all-students-section py-5 px-7">
-       <DashboardTopHeader name="Teachers" title="All Teachers"></DashboardTopHeader>
+       <DashboardTopHeader name="Parents" title="All Parents"></DashboardTopHeader>
         <div>
           <div className="bg-white p-5">
             <div className="search-all-student pb-5">
-              <h2 className="font-bold text-2xl pb-5">All Teachers</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">               
+              <h2 className="font-bold text-2xl pb-5">All Parents</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="name">
-                  <input type="text" onChange={(e)=>setQuery({...query, name: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Name"/>
+                  <input type="text" onChange={(e)=>setQuery({...query, name: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Name" />
                 </div>
                 <div className="email">
-                  <input type="text" onChange={(e)=>setQuery({...query, email: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Email"/>
+                  <input type="text" onChange={(e)=>setQuery({...query, email: e.target.value.toLocaleLowerCase()})}  className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Email"/>
                 </div>
-                <div className="parent">
-                  <input type="text" onChange={(e)=>setQuery({...query, parentName: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Parent Name" />
+                <div className="phone">
+                  <input type="text"  onChange={(e)=>setQuery({...query, phone: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Phone"/>
                 </div>
                 <div className="search-btn">
                   <button className="bg-[#042954] py-2 px-10 rounded lg font-bold text-white w-full hover:bg-[#3D5EE1]">Search</button>
@@ -49,6 +49,7 @@ const AllTeachers = () => {
                   <th>Photo</th>
                   <th>Name</th>
                   <th>Gender</th>
+                  <th>Occupation</th>
                   <th>Parent</th>
                   <th>Address</th>
                   <th>Date Of Birth</th>
@@ -58,34 +59,36 @@ const AllTeachers = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {teachers?.filter((teacher:any)=>teacher?.name?.toLowerCase().includes(query.name))
-              .filter((teacher:any)=>teacher?.email?.toLowerCase().includes(query.email))
-              .filter((teacher:any)=>teacher?.fatherName?.toLowerCase().includes(query.parentName))
-                .map((teacher:any, i:any) => (
-                  <tr key={teacher._id} className={`${i % 2 ? "" : "active"}`}>
+                {parents?.filter((parents:any)=>parents?.name?.toLowerCase().includes(query.name))
+              .filter((parents:any)=>parents?.email?.toLowerCase().includes(query.email))
+              .filter((parents:any)=>parents?.phone?.toLowerCase().includes(query.phone))
+                
+                .map((parents:any, i:any) => (
+                  <tr key={parents._id} className={`${i % 2 ? "" : "active"}`}>
                     <td className="">
                       <div className="avatar">
                         <div className="w-12 rounded-full">
                           <img
                             src={
-                              teacher?.teacherPhoto
-                                ? teacher.teacherPhoto
-                                : teacher.gender === "Male"
+                              parents?.parentsPhoto
+                                ? parents.parentsPhoto
+                                : parents.gender === "Male"
                                 ? male
                                 : female
                             }
-                            alt={teacher.name}
+                            alt={parents.name}
                           />
                         </div>
                       </div>
                     </td>
-                    <td>{teacher.name}</td>
-                    <td>{teacher.gender}</td>
-                    <td>{teacher.fatherName}</td>
-                    <td>{teacher.address}</td>
-                    <td>{teacher.dateOfBirth}</td>
-                    <td>{teacher.phone}</td>
-                    <td>{teacher.email}</td>
+                    <td>{parents.name}</td>
+                    <td>{parents.gender}</td>
+                    <td>{parents.occupation}</td>
+                    <td>{parents.fatherName}</td>
+                    <td>{parents.address}</td>
+                    <td>{parents.dateOfBirth}</td>
+                    <td>{parents.phone}</td>
+                    <td>{parents.email}</td>
                     <td>Edit || Delete</td>
                   </tr>
                 ))}
@@ -100,4 +103,4 @@ const AllTeachers = () => {
     );
 };
 
-export default AllTeachers;
+export default AllParents;
