@@ -1,42 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { useTitle } from '../../../../hooks/useTitle';
-import male from "./../../../../Assets/Students/male.png";
-import female from "./../../../../Assets/Students/female.png";
+import male from "./../../../../assets/Students/male.png";
+import female from "./../../../../assets/Students/female.png";
+import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
+import { useQuery } from '@tanstack/react-query';
+import Loader from '../../../../SharedPage/Loader/Loader';
 
 const AllTeachers = () => {
     useTitle("All Teachers")
-    const [teachers, setTeachers] = useState<any[]>([]);
-    useEffect(() => {
-      fetch(`${process.env.REACT_APP_API_URL}/teachers`)
+    const [query, setQuery] = useState({
+      name: "",
+      email: "",
+      parentName: ""
+    })
+    const { isLoading, data: teachers=[] } = useQuery({
+      queryKey: ['teachers'],
+      queryFn: async () =>
+        await fetch(`${process.env.REACT_APP_API_URL}/teachers`)
         .then((res) => res.json())
-        .then((data) => setTeachers(data.data));
-    }, []);
+        .then((data)=>data.data)
+  })
     return (
         <div className="all-students-section py-5 px-7">
-        <div className="breadcrumb-area flex justify-between pb-6">
-          <h2 className="text-left text-bold text-black text-2xl">
-            All Teachers
-          </h2>
-          <div className="flex gap-1">
-            <h3 className="text-left text-bold text-black text-2xl">Student</h3>
-            <h4 className="text-left text-bold text-[#6C757D] text-2xl">
-              / All Teachers
-            </h4>
-          </div>
-        </div>
+       <DashboardTopHeader name="Teachers" title="All Teachers"></DashboardTopHeader>
         <div>
           <div className="bg-white p-5">
             <div className="search-all-student pb-5">
               <h2 className="font-bold text-2xl pb-5">All Teachers</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                <div className="roll">
-                  <input type="text" className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Roll Number" />
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">               
                 <div className="name">
-                  <input type="text"  className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Name"/>
+                  <input type="text" onChange={(e)=>setQuery({...query, name: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Name"/>
                 </div>
-                <div className="class">
-                  <input type="text"  className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Class"/>
+                <div className="email">
+                  <input type="text" onChange={(e)=>setQuery({...query, email: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Email"/>
+                </div>
+                <div className="parent">
+                  <input type="text" onChange={(e)=>setQuery({...query, parentName: e.target.value.toLocaleLowerCase()})} className="bg-[#F8F8F8] py-2 px-2 w-full focus:outline-none" placeholder="Search By Parent Name" />
                 </div>
                 <div className="search-btn">
                   <button className="bg-[#042954] py-2 px-10 rounded lg font-bold text-white w-full hover:bg-[#3D5EE1]">Search</button>
@@ -59,7 +58,10 @@ const AllTeachers = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {teachers?.map((teacher, i) => (
+                {teachers?.filter((teacher:any)=>teacher?.name?.toLowerCase().includes(query.name))
+              .filter((teacher:any)=>teacher?.email?.toLowerCase().includes(query.email))
+              .filter((teacher:any)=>teacher?.fatherName?.toLowerCase().includes(query.parentName))
+                .map((teacher:any, i:any) => (
                   <tr key={teacher._id} className={`${i % 2 ? "" : "active"}`}>
                     <td className="">
                       <div className="avatar">
@@ -82,13 +84,14 @@ const AllTeachers = () => {
                     <td>{teacher.fatherName}</td>
                     <td>{teacher.address}</td>
                     <td>{teacher.dateOfBirth}</td>
-                    <td>{teacher.mobile}</td>
+                    <td>{teacher.phone}</td>
                     <td>{teacher.email}</td>
                     <td>Edit || Delete</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            {isLoading && <Loader></Loader>}
             </div>
        
           </div>
