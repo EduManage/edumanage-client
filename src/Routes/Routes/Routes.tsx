@@ -6,12 +6,16 @@ import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStuden
 import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
 import AddTeachers from "../../Pages/AdminDashboard/Teachers/AddTeachers/AddTeachers";
 import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeachers";
+import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import AllInstructor from "../../Pages/Instructor/AllInstructor/AllInstructor";
 import TeacherDeatils from "../../Pages/Instructor/TeacherDetails/TeacherDeatils";
+import News from "../../Pages/News/News";
+import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
+import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse'
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +36,7 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
+
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
       },
@@ -50,8 +55,25 @@ export const router = createBrowserRouter([
       {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/instructorDetails/${params.id}`),
+        loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`),
+
+        path: "/news",
+        element: <News></News>
+      },
+      {
+        path: "/news/:id",
+        element: <NewsDetails></NewsDetails>
+      },
+      {
+        path: "/courses",
+        element: <Courses></Courses>,
+
+      },
+      {
+        path: "/courses/:id",
+        element: <SingleCourse/> ,
+        loader: ({params}) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
+
       },
     ],
   },

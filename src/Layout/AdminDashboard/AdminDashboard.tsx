@@ -18,13 +18,13 @@ const AdminDashboard = () => {
       <div className={`flex gap-5 ${collapsed ? "justify-center" : "justify-between"} items-center bg-[#3D5EE1] p-5`}>
         {collapsed === false && <h2 className="font-bold text-2xl text-white">Admin</h2>}
         
-        {collapsed ? <AiOutlineClose className="text-white text-2xl"  onClick={() => collapseSidebar()}></AiOutlineClose>:<HiMenu className="text-3xl text-white" onClick={() => collapseSidebar()}></HiMenu>}
+        {collapsed ? <HiMenu className="text-white text-2xl"  onClick={() => collapseSidebar()}></HiMenu>:<AiOutlineClose className="text-3xl text-white" onClick={() => collapseSidebar()}></AiOutlineClose>}
       </div>
         <Menu 
          transitionDuration={700}
-         renderExpandIcon={({ open }) => <span>{open ? <BsChevronDown className={`forward-arrow ${collapsed === true && 'hidden'}`} /> : <BsChevronRight className={`backward-arrow ${collapsed === true && 'hidden'}`} />}</span>}
+         renderExpandIcon={({ open }: any) => <span>{open ? <BsChevronDown className={`forward-arrow ${collapsed === true && 'hidden'}`} /> : <BsChevronRight className={`backward-arrow ${collapsed === true && 'hidden'}`} />}</span>}
          menuItemStyles={{
-          button: ({ level, active, disabled }) => {
+          button: ({ level, active, disabled }: any) => {
             // only apply styles on first level elements of the tree
             if (level === 0)
               return {
