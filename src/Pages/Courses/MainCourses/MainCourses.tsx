@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { AiFillStar } from "react-icons/ai";
 import { MdOutlinePersonOutline } from "react-icons/md";
 
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../UserContext/UserContext';
 
 
 const MainCourses = () => {
-    const [courses, setCourses] = useState([])
+    const {loading} = useContext(AuthContext);
+    const [courses, setCourses] = useState([]);
     // const { data: courses = [], refetch } = useQuery({
     //     queryKey: ['courses'],
     //     queryFn: () => fetch(`https://recyclelib-server.vercel.app/courses`)
@@ -23,6 +25,7 @@ const MainCourses = () => {
         details: string;
         category: string;
         _id: number;
+        picture: string;
 
     }
     useEffect(() => {
@@ -30,17 +33,24 @@ const MainCourses = () => {
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
-    
+    if (loading) {
+        return <div className="flex items-center justify-center space-x-2">
+            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
+            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
+            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
+        </div>
+    }
+
     return (
         <div>
 
             {
-                courses?.map((course: course, i) => <div  key={i}>
+                courses?.map((course: course, i) => <div key={i}>
 
 
                     <div className='flex w-full my-5 gap-5 shadow-md hover:shadow-lg ease-in-out duration-300 font-poppins-em'>
                         <div className='w-2/5'>
-                            <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
+                            <img src={course.picture} alt="" />
                         </div>
                         <div className='w-3/5 '>
 
@@ -56,7 +66,8 @@ const MainCourses = () => {
                                 </div>
                                 <Link to={`/courses/${course._id}`}>
                                     <h1 className='font-semibold py-2 hover:text-blue-700'>{course.title}</h1>
-                                    <p className='text-xs'>{course.details}</p>
+                                    <p className='text-xs'>{course?.details.length > 150 ? course?.details.slice(0, 90) + '...' : course?.details}</p>
+                                    {/* {details.length } */}
                                 </Link>
                                 <div className="flex mt-2 items-center justify-between">
                                     <div className='flex items-center'>

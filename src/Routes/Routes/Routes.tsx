@@ -13,6 +13,8 @@ import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse'
+import AllInstructor from "../../Pages/AdminDashboard/Instructor/AllInstructor/AllInstructor";
+import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils";
 
 export const router = createBrowserRouter([
   {
@@ -48,10 +50,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        element: <SingleCourse/> ,
-        loader: ({params}) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
+        element: <SingleCourse />,
+        loader: ({ params }) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
 
       },
+      {
+        path: "/all-instrutor",
+        element: <AllInstructor></AllInstructor>,
+      },
+      // {
+      //   path: "/about",
+      //   element: <About></About>,
+      // },
+      {
+        path: "/instrctorDetails/:id",
+        element: <TeacherDeatils />,
+        loader: ({ params }) =>fetch(`http://localhost:5000/instructorDetails/${params.id}`)
+      }
     ],
   },
   {

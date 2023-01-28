@@ -4,6 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import { MdOutlinePersonOutline, MdOutlineClass, MdArticle, MdDownload, MdOutlineAssignment } from "react-icons/md";
 import { BiBookContent } from "react-icons/bi";
 import { TbLanguage } from "react-icons/tb";
+import sharing from '../../../Assets/sharing.png'
 
 const SingleCourse = () => {
     const courseDetails: any = useLoaderData();
@@ -11,11 +12,8 @@ const SingleCourse = () => {
     // console.log(SingleCourse)
     return (
         <div>
-            <div className='bg-white pb-28 pt-40 text-center shadow-lg font-poppins-em'>
-                <h1 className='text-4xl font-bold'>Our Courses</h1>
-                <p className='font-semibold'>Home - Courses</p>
-            </div>
-            <div className='w-full flex justify-center items-center pt-10 font-poppins-em'>
+            
+            <div className='w-full flex justify-center items-center pt-20 font-poppins-em'>
                 <div className='w-3/4 flex gap-10'>
 
 
@@ -45,16 +43,17 @@ const SingleCourse = () => {
                         </div>
                         <div className='w-full'>
                             <img className='w-full' src={picture} alt="" />
-                            <p className='mt-5 border p-5'>{details}</p>
+                            <p className='mt-5 border p-5 text-sm'>{details}</p>
+                            <img src={sharing} className='my-10 w-1/2' alt="" />
                         </div>
                     </div>
                     {/* content section end  */}
 
                     {/* Right catagories bar start  */}
                     <div className='w-1/3'>
-                        <div className='flex items-center justify-center'>
+                        <div className='flex items-center justify-center pt-20 gap-5'>
                             <h1 className='text-sm'>Price : </h1>
-                            <h1 className='text-teal-600 text-xl font-semibold'>{price}</h1>
+                            <h1 className='text-teal-600 text-2xl font-semibold'>{price}</h1>
                         </div>
                         <div className='flex flex-col text-sm p-8 text-black/80 font-medium'>
 

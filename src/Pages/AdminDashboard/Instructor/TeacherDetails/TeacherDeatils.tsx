@@ -1,9 +1,9 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import fb from "../../../Assets/facebook.png";
-import ig from "../../../Assets/instagram.png";
-import tw from "../../../Assets/twitter.png";
-import yt from "../../../Assets/youtube.png";
+import fb from "../../../../Assets/facebook.png";
+import ig from "../../../../Assets/instagram.png";
+import tw from "../../../../Assets/twitter.png";
+import yt from "../../../../Assets/youtube.png";
 
 const TeacherDeatils = () => {
   const instructorDetailsOne: any = useLoaderData();
