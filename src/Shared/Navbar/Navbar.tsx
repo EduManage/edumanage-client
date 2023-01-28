@@ -63,7 +63,7 @@ const Navbar = () => {
                     <Link to="/courses">COURSE</Link>
                 </div>
                 <div className="hover-underline-animation">
-                    <Link to="/">INSTRUCTOR</Link>
+                    <Link to="/all-instrutor">INSTRUCTOR</Link>
                 </div>
                 <div className="hover-underline-animation">
                     <Link to="/news">NEWS</Link>
