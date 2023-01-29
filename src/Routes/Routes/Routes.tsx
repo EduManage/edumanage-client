@@ -5,6 +5,11 @@ import About from "../../Pages/About/About";
 
 import AddTeachers from "../../Pages/AdminDashboard/Teachers/AddTeachers/AddTeachers";
 import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeachers";
+import AllParents from "../Pages/AdminDashboard/Parents/AllParents/AllParents";
+import AddParents from "../Pages/AdminDashboard/Parents/AddParents/AddParents";
+import AddBook from "../Pages/AdminDashboard/Books/AddBook/AddBook";
+import AllBooks from "../Pages/AdminDashboard/Books/AllBooks/AllBooks";
+import AdminDashboardHome from "../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
 import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
@@ -108,6 +113,22 @@ export const router = createBrowserRouter([
         path: "/admin/all-teachers",
         element: <AllTeachers></AllTeachers>,
       },
+	  {
+		path: "/admin/add-parents", 
+		element: <AddParents></AddParents>
+	  },
+	  {
+		path: "/admin/all-parents", 
+		element: <AllParents></AllParents>
+	  },
+	  {
+		path: "/admin/add-books", 
+		element: <AddBook></AddBook>
+	  },
+	  {
+		path: "/admin/all-books", 
+		element: <AllBooks></AllBooks>
+	  },
     ],
   },
 ]);
