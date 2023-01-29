@@ -2,14 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import AdminDashboard from "../../Layout/AdminDashboard/AdminDashboard";
 import Main from "../../Layout/Main/Main";
 import About from "../../Pages/About/About";
-
 import AddTeachers from "../../Pages/AdminDashboard/Teachers/AddTeachers/AddTeachers";
 import AllTeachers from "../../Pages/AdminDashboard/Teachers/AllTeachers/AllTeachers";
-import AllParents from "../Pages/AdminDashboard/Parents/AllParents/AllParents";
-import AddParents from "../Pages/AdminDashboard/Parents/AddParents/AddParents";
-import AddBook from "../Pages/AdminDashboard/Books/AddBook/AddBook";
-import AllBooks from "../Pages/AdminDashboard/Books/AllBooks/AllBooks";
-import AdminDashboardHome from "../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
 import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
@@ -20,6 +14,12 @@ import SignUp from "../../Shared/SignUp/SignUp";
 import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse';
 import AllInstructor from "../../Pages/AdminDashboard/Instructor/AllInstructor/AllInstructor";
 import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils"
+import AllBooks from "../../Pages/AdminDashboard/Books/AllBooks/AllBooks";
+import AddBook from "../../Pages/AdminDashboard/Books/AddBook/AddBook";
+import AllParents from "../../Pages/AdminDashboard/Parents/AllParents/AllParents";
+import AddParents from "../../Pages/AdminDashboard/Parents/AddParents/AddParents";
+import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
+import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
 
 export const router = createBrowserRouter([
   {
@@ -97,14 +97,14 @@ export const router = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard></AdminDashboard>,
     children: [
-      // {
-      //   path: "/admin/add-students",
-      //   element: <AddStudent></AddStudent>,
-      // },
-      // {
-      //   path: "/admin/all-students",
-      //   element: <AllStudents></AllStudents>,
-      // },
+      {
+        path: "/admin/add-students",
+        element: <AddStudent></AddStudent>,
+      },
+      {
+        path: "/admin/all-students",
+        element: <AllStudents></AllStudents>,
+      },
       {
         path: "/admin/add-teachers",
         element: <AddTeachers></AddTeachers>,
