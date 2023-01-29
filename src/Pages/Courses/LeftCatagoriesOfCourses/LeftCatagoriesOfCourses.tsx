@@ -1,10 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BiCheckbox, BiCheckboxSquare } from "react-icons/bi";
+=======
+>>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
 
 const LeftCatagoriesOfCourses = () => {
     return (
         <div>
+<<<<<<< HEAD
             <h1 className='text-lg font-semibold'>Search in Courses</h1>
+=======
+            <h1>Search in Courses</h1>
+>>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
             {/* search section  */}
             <div className='w-3/4 mb-5 mt-2 '>
                 <div className="relative flex items-center border-2 w-full h-8 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
@@ -23,6 +30,7 @@ const LeftCatagoriesOfCourses = () => {
             </div>
 
 
+<<<<<<< HEAD
             <h1 className='text-lg font-semibold'>Category</h1>
             <div className='flex flex-col justify-start items-start py-5 text-sm'>
                 
@@ -58,6 +66,18 @@ const LeftCatagoriesOfCourses = () => {
             </div>
             <h1 className='text-lg font-semibold'>Price Range</h1>
             <input type="range" min="0" max="100" value="40" className="range range-xs w-1/2" />
+=======
+            <h1>Category</h1>
+            <div className='flex flex-col justify-start items-start py-5 text-sm'>
+                <button>Design & Illustration</button>
+                <button>Web Development</button>
+                <button>Management</button>
+                <button>Music</button>
+                <button>Photography</button>
+                <button>Sports</button>     
+            </div>
+            <h1>Price Range</h1>
+>>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
 
         </div>
     );

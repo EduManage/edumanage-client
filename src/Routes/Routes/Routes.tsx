@@ -41,6 +41,7 @@ export const router = createBrowserRouter([
       },
       {
 
+<<<<<<< HEAD
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
       },
@@ -64,13 +65,24 @@ export const router = createBrowserRouter([
       },
       {
 
+=======
+>>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
         path: "/news",
         element: <News></News>
       },
       {
         path: "/news/:id",
+<<<<<<< HEAD
         element: <NewsDetails></NewsDetails>,
         loader: ({params}) =>fetch(`https://edumanage-83f56.web.app/news/${params.id}`)
+=======
+        element: <NewsDetails></NewsDetails>
+},
+{
+        path: "/courses",
+        element: <Courses></Courses> ,
+
+>>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
       },
       {
         path: "/courses",
