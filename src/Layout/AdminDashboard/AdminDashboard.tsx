@@ -89,16 +89,16 @@ const AdminDashboard = () => {
                 label="Parents"
                 icon={<MdGroup />}
               >
-               <MenuItem component={<Link to="./"/>}>All Parents</MenuItem>
+               <MenuItem component={<Link to="./all-parents"/>}>All Parents</MenuItem>
                <MenuItem component={<Link to="./"/>}>Parents Details</MenuItem>
-               <MenuItem component={<Link to="./"/>}>Add Parent</MenuItem>
+               <MenuItem component={<Link to="./add-parents"/>}>Add Parent</MenuItem>
           </SubMenu>
           <SubMenu
                 label="Library"
                 icon={<FaReadme />}
               >
-               <MenuItem component={<Link to="./"/>}>All Book</MenuItem>
-               <MenuItem component={<Link to="./"/>}>Add New Book</MenuItem>
+               <MenuItem component={<Link to="./all-books"/>}>All Book</MenuItem>
+               <MenuItem component={<Link to="./add-books"/>}>Add New Book</MenuItem>
           </SubMenu>
           <SubMenu
                 label="Account"
