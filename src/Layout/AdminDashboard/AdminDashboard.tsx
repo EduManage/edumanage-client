@@ -18,7 +18,7 @@ const AdminDashboard = () => {
       <div className={`flex gap-5 ${collapsed ? "justify-center" : "justify-between"} items-center bg-[#3D5EE1] p-5`}>
         {collapsed === false && <h2 className="font-bold text-2xl text-white">Admin</h2>}
         
-        {collapsed ? <AiOutlineClose className="text-white text-2xl"  onClick={() => collapseSidebar()}></AiOutlineClose>:<HiMenu className="text-3xl text-white" onClick={() => collapseSidebar()}></HiMenu>}
+        {collapsed ? <HiMenu className="text-white text-2xl"  onClick={() => collapseSidebar()}></HiMenu>:<AiOutlineClose className="text-3xl text-white" onClick={() => collapseSidebar()}></AiOutlineClose>}
       </div>
         <Menu 
          transitionDuration={700}
@@ -89,16 +89,16 @@ const AdminDashboard = () => {
                 label="Parents"
                 icon={<MdGroup />}
               >
-               <MenuItem component={<Link to="./"/>}>All Parents</MenuItem>
+               <MenuItem component={<Link to="./all-parents"/>}>All Parents</MenuItem>
                <MenuItem component={<Link to="./"/>}>Parents Details</MenuItem>
-               <MenuItem component={<Link to="./"/>}>Add Parent</MenuItem>
+               <MenuItem component={<Link to="./add-parents"/>}>Add Parent</MenuItem>
           </SubMenu>
           <SubMenu
                 label="Library"
                 icon={<FaReadme />}
               >
-               <MenuItem component={<Link to="./"/>}>All Book</MenuItem>
-               <MenuItem component={<Link to="./"/>}>Add New Book</MenuItem>
+               <MenuItem component={<Link to="./all-books"/>}>All Book</MenuItem>
+               <MenuItem component={<Link to="./add-books"/>}>Add New Book</MenuItem>
           </SubMenu>
           <SubMenu
                 label="Account"

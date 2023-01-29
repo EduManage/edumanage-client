@@ -1,20 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-import { ProSidebarProvider } from 'react-pro-sidebar';
-AOS.init();
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+import { ProSidebarProvider } from "react-pro-sidebar";
+import UserContext from "./UserContext/UserContext";
+import {
+  QueryClient, QueryClientProvider
+} from '@tanstack/react-query'
 
+AOS.init();
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <ProSidebarProvider>
-      <App />
+
+      <QueryClientProvider client={queryClient}>
+       <UserContext>
+        <App />
+      </UserContext>
+      </QueryClientProvider>
+
     </ProSidebarProvider>
   </React.StrictMode>
 );
