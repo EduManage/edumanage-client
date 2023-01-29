@@ -36,7 +36,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/news/:id",
-        element: <NewsDetails></NewsDetails>
+        element: <NewsDetails></NewsDetails>,
+        loader: ({params}) =>fetch(`https://edumanage-83f56.web.app/news/${params.id}`)
       },
     ],
   },
