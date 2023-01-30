@@ -10,6 +10,8 @@ import AllParents from "../Pages/AdminDashboard/Parents/AllParents/AllParents";
 import AddParents from "../Pages/AdminDashboard/Parents/AddParents/AddParents";
 import AddBook from "../Pages/AdminDashboard/Books/AddBook/AddBook";
 import AllBooks from "../Pages/AdminDashboard/Books/AllBooks/AllBooks";
+import AllClasses from "../Pages/AdminDashboard/Classes/AllClasses/AllClasses";
+import AddNewClass from "../Pages/AdminDashboard/Classes/AddNewClass/AddNewClass";
 import AdminDashboardHome from "../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
 import Courses from "../../Pages/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
@@ -129,6 +131,14 @@ export const router = createBrowserRouter([
 	  {
 		path: "/admin/all-books", 
 		element: <AllBooks></AllBooks>
+	  },
+	  {
+		path: "/admin/all-classes", 
+		element: <AllClasses></AllClasses>
+	  },
+	  {
+		path: "/admin/add-classes", 
+		element: <AddNewClass></AddNewClass>
 	  },
     ],
   },

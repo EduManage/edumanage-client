@@ -1,10 +1,10 @@
 import Lottie from "lottie-react";
-import lottie1 from './lottie assets/80356-online-learning.json'
-import place from './lottie assets/place.json'
-import certificate from './lottie assets/certificate.json'
-import coursePic from './lottie assets/course.png'
-import locationPic from './lottie assets/location.png'
-import certificatePic from './lottie assets/certificate-flat.png'
+import lottie1 from './lottie Assets/80356-online-learning.json'
+import place from './lottie Assets/place.json'
+import certificate from './lottie Assets/certificate.json'
+import coursePic from './lottie Assets/course.png'
+import locationPic from './lottie Assets/location.png'
+import certificatePic from './lottie Assets/certificate-flat.png'
 
 const HeroSec2 = () => {
     return (
