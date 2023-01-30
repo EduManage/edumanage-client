@@ -40,7 +40,6 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
       },
@@ -63,13 +62,13 @@ export const router = createBrowserRouter([
 
       },
       {
-
         path: "/news",
         element: <News></News>
       },
       {
         path: "/news/:id",
-        element: <NewsDetails></NewsDetails>
+        element: <NewsDetails></NewsDetails>,
+        loader: ({ params }) => fetch(`https://edumanage-server.vercel.app/news/${params.id}`),
       },
       {
         path: "/courses",
@@ -113,22 +112,22 @@ export const router = createBrowserRouter([
         path: "/admin/all-teachers",
         element: <AllTeachers></AllTeachers>,
       },
-	  {
-		path: "/admin/add-parents", 
-		element: <AddParents></AddParents>
-	  },
-	  {
-		path: "/admin/all-parents", 
-		element: <AllParents></AllParents>
-	  },
-	  {
-		path: "/admin/add-books", 
-		element: <AddBook></AddBook>
-	  },
-	  {
-		path: "/admin/all-books", 
-		element: <AllBooks></AllBooks>
-	  },
+      {
+        path: "/admin/add-parents",
+        element: <AddParents></AddParents>
+      },
+      {
+        path: "/admin/all-parents",
+        element: <AllParents></AllParents>
+      },
+      {
+        path: "/admin/add-books",
+        element: <AddBook></AddBook>
+      },
+      {
+        path: "/admin/all-books",
+        element: <AllBooks></AllBooks>
+      },
     ],
   },
 ]);
