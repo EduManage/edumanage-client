@@ -1,4 +1,4 @@
-export const newsData = [
+export const nnewsData = [
     {
         id : 1,
         category : 'programming',

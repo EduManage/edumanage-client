@@ -40,11 +40,6 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8d7ab98adced180a9e99ce1b595c954d79c512ae
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
       },
@@ -67,38 +62,20 @@ export const router = createBrowserRouter([
 
       },
       {
-
-<<<<<<< HEAD
-=======
->>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
-=======
->>>>>>> 8d7ab98adced180a9e99ce1b595c954d79c512ae
         path: "/news",
         element: <News></News>
       },
       {
         path: "/news/:id",
-<<<<<<< HEAD
         element: <NewsDetails></NewsDetails>,
-        loader: ({params}) =>fetch(`https://edumanage-83f56.web.app/news/${params.id}`)
-=======
-        element: <NewsDetails></NewsDetails>
+        loader: ({ params }) => fetch(`https://edumanage-server.vercel.app/news/${params.id}`),
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
 
->>>>>>> 6e434ae5afede305bd5dbfdbc69e4591d3dd46c1
       },
       {
-<<<<<<< HEAD
-        path: "/courses",
-        element: <Courses></Courses>,
-
-      },
-      {
-=======
->>>>>>> 8d7ab98adced180a9e99ce1b595c954d79c512ae
         path: "/courses/:id",
         element: <SingleCourse />,
         loader: ({ params }) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
@@ -135,22 +112,22 @@ export const router = createBrowserRouter([
         path: "/admin/all-teachers",
         element: <AllTeachers></AllTeachers>,
       },
-	  {
-		path: "/admin/add-parents", 
-		element: <AddParents></AddParents>
-	  },
-	  {
-		path: "/admin/all-parents", 
-		element: <AllParents></AllParents>
-	  },
-	  {
-		path: "/admin/add-books", 
-		element: <AddBook></AddBook>
-	  },
-	  {
-		path: "/admin/all-books", 
-		element: <AllBooks></AllBooks>
-	  },
+      {
+        path: "/admin/add-parents",
+        element: <AddParents></AddParents>
+      },
+      {
+        path: "/admin/all-parents",
+        element: <AllParents></AllParents>
+      },
+      {
+        path: "/admin/add-books",
+        element: <AddBook></AddBook>
+      },
+      {
+        path: "/admin/all-books",
+        element: <AllBooks></AllBooks>
+      },
     ],
   },
 ]);

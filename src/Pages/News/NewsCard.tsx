@@ -3,7 +3,7 @@ import { FaFolderPlus, FaUser, FaWarehouse } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 type news = {
-    id: number;
+    _id: number;
     category: string;
     title: string;
     description: string;
@@ -11,7 +11,7 @@ type news = {
     image: string;
 }
 const NewsCard = ({ news }: any) => {
-    const { category, title, description, author, image, id } = news
+    const { category, title, description, author, image, _id } = news
 
     return (
         <div className='w-full mx-auto shadow-md border p-4 mb-8'>
@@ -32,7 +32,7 @@ const NewsCard = ({ news }: any) => {
             </div>
             <h1 className=" text-3xl font-semibold mt-5">{title}</h1>
             <p className='text-base mt-2'>{description.length > 200 ? description.substring(0, 200) + '...' : description}</p>
-            <Link to={`/news/${id}`}>
+            <Link to={`/news/${_id}`}>
                 <button className="bg-gradient-to-r  from-teal-300 to-blue-300 mt-2 px-8 py-2 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded-2xl text-xs text-white  font-medium hover:shadow-xl ease-in-out duration-300">
                     Continue Reading
                 </button>
