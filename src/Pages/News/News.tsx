@@ -50,9 +50,15 @@ const News = () => {
                 loading ? <p className="text-2xl text-center">loading...</p> : (
                     <div className="md:w-9/12 flex flex-col-reverse md:flex-row justify-center items-start gap-8 mt-8 mx-auto">
                         <div className='md:w-4/6'>
-                            {filteredData.map(news => <NewsCard 
-                            key={news._id}
-                            news={news} />)}
+                            {
+                                filteredData.length === 0 ?
+                                    newsData.map(news => <NewsCard
+                                        key={news._id}
+                                        news={news} />) :
+                                    filteredData.map(news => <NewsCard
+                                        key={news._id}
+                                        news={news} />)
+                            }
                         </div>
                         <div className='w-full md:w-3/12 text-center'>
                             <h1 className="text-2xl bg-teal-500 rounded text-white w-full mb-4 px-4 py-2">Category</h1>
