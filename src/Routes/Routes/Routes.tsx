@@ -20,6 +20,7 @@ import AllParents from "../../Pages/AdminDashboard/Parents/AllParents/AllParents
 import AddParents from "../../Pages/AdminDashboard/Parents/AddParents/AddParents";
 import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
+import SupportSession from "../../Pages/SupportSession/SupportSession";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/news",
         element: <News></News>
+      },
+      {
+        path: "/support-session",
+        element: <SupportSession></SupportSession>
       },
       {
         path: "/news/:id",

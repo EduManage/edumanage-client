@@ -63,6 +63,9 @@ const Navbar = () => {
                     <Link to="/courses">COURSE</Link>
                 </div>
                 <div className="hover-underline-animation">
+                    <Link to="/support-session">SUPPORT</Link>
+                </div>
+                <div className="hover-underline-animation">
                     <Link to="/all-instrutor">INSTRUCTOR</Link>
                 </div>
                 <div className="hover-underline-animation">
