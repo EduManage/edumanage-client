@@ -52,10 +52,6 @@ export const router = createBrowserRouter([
         element: <AllInstructor></AllInstructor>,
       },
       {
-        path: "/about",
-        element: <About></About>,
-      },
-      {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`),
