@@ -1,16 +1,61 @@
+import { useQueries, useQuery } from "@tanstack/react-query";
 import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "next-share";
+import { useContext } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { FaFolderPlus, FaUser, FaWarehouse } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../UserContext/UserContext";
+import CommentBox from "./CommentBox";
 import CommentForm from "./CommentForm";
 // import { newsData } from "./newsData"
 
 const NewsDetails = () => {
+
+    const {user} = useContext(AuthContext)
     let shareUrl = window.location.href
+    const postDate= new Date().toLocaleString().toString();
     const news: any = useLoaderData()
-    console.log(news);
+
     const { category, title, description, author, image, _id } = news
+    const {  refetch, data : comments=[] } = useQuery({
+        queryKey: ['comment'],
+        queryFn: () =>
+          fetch(`https://edumanage-server.vercel.app/comment?id=${_id}`)
+          .then((res) => res.json(),
+          ),
+      })
+
+    // comment functionality
+    const handleCommentForm = (e: any) => {
+        e.preventDefault()
+        const comment = e.target.comment.value
+
+        const commentData = {
+            name: user?.displayName,
+            userComment: comment,
+            commmentId: _id,
+            postDate ,
+            userPhoto : user?.photoURL
+        }
+
+        fetch(`https://edumanage-server.vercel.app/comment`, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(commentData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                e.target.reset()
+                refetch()
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     return (
         <div className='w-full md:w-4/6 mx-auto shadow-md border p-4 mb-8'>
             <img src={image} className=' w-full' alt="" />
@@ -47,7 +92,12 @@ const NewsDetails = () => {
 
                 </div>
             </div>
-            <CommentForm />
+            <CommentForm handleCommentForm={handleCommentForm} />
+            {
+               comments.map((cmnt: any) => <CommentBox 
+                    comment={cmnt}
+                />)
+            }
         </div>
     );
 };

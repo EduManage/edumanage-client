@@ -47,7 +47,8 @@ const News = () => {
                 <h1 className="text-4xl text-white">Today's News</h1>
             </div>
             {
-                loading ? <p className="text-2xl text-center">loading...</p> : (
+                loading ? <div className="w-12 h-12 rounded-full animate-spin
+                border-4 border-solid border-green-500 border-t-transparent my-5 mx-auto"></div> : (
                     <div className="md:w-9/12 flex flex-col-reverse md:flex-row justify-center items-start gap-8 mt-8 mx-auto">
                         <div className='md:w-4/6'>
                             {
