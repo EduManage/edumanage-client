@@ -95,8 +95,8 @@ const Navbar = () => {
                             </button>
                         </div>
                         :
-                        <div className="flex items-center gap-2">
-                            <Link to={"/login"}>
+                        <div className="flex items-center gap-4">
+                            <Link to={"/login"} className='hover-underline-animation'>
                                 <button>LOGIN</button>
                             </Link>
                             <Link to={"/signup"}>

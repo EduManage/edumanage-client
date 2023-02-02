@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import LeftCatagoriesOfCourses from './LeftCatagoriesOfCourses/LeftCatagoriesOfCourses';
 import { BsFillGrid3X3GapFill, BsChevronDown } from "react-icons/bs";
 import MainCourses from './MainCourses/MainCourses';
-import { useQuery } from 'react-query';
-import { useFormState } from 'react-hook-form';
+
 import homeBg from '../../Assets/homebg.png'
 const Courses = () => {
     // const [courses, setCoursess] = useFormState([])
@@ -14,7 +13,7 @@ const Courses = () => {
     // }, [])
     return (
         <div>
-            <div className=' pb-28 pt-40 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
+            <div className=' pb-24 pt-36 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
                 style={{ backgroundImage: `url(${homeBg})` }}>
                 <h1 className='text-4xl font-bold'>Our Courses</h1>
                 <p className='font-semibold'>Home - Courses</p>

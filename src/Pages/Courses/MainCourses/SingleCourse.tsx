@@ -1,18 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AiFillStar } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 import { MdOutlinePersonOutline, MdOutlineClass, MdArticle, MdDownload, MdOutlineAssignment } from "react-icons/md";
 import { BiBookContent } from "react-icons/bi";
 import { TbLanguage } from "react-icons/tb";
 import sharing from '../../../Assets/sharing.png'
+import { useFormState } from 'react-hook-form';
 
 const SingleCourse = () => {
     const courseDetails: any = useLoaderData();
     const { price, category, title, rating, reviews, Authorimg, Author, persons, picture, details, totallecture, duiration, articles, downloadbleitem, asssignment, language } = courseDetails;
     // console.log(SingleCourse)
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+
+
+        // fetch(`https://eoc-server.vercel.app/status/${postInfo._id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(currentLike)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+
+        //         // refetch();
+        //         // form.reset();
+
+        //     })
+
+    };
     return (
         <div>
-            
+
             <div className='w-full flex justify-center items-center pt-20 font-poppins-em'>
                 <div className='w-3/4 flex gap-10'>
 
@@ -24,21 +50,32 @@ const SingleCourse = () => {
                                 <h1 className='bg-rose-500 py-1 text-center px-2 text-white text-xs font-medium rounded-lg'>{category}</h1>
                             </div>
                             <h1 className='font-semibold pt-2 text-3xl'>{title}</h1>
-                            <div className='flex items-center text-xs gap-2 py-5'>
-                                <img
-                                    className="w-8 rounded-full "
-                                    src={Authorimg}
-                                    alt=""
-                                />
-                                <h1 className='text-sm '>by </h1>
-                                <h1 className="font-semibold text-sm text-rose-500">{Author} </h1>
-                                <div className='flex items-center'>
-                                    <h1>{rating}</h1>
-                                    <AiFillStar className='text-orange-500 ml-1 ' />
+                            <div className='flex items-center justify-between'>
+                                <div className='flex items-center text-xs gap-2 py-5'>
+                                    <img
+                                        className="w-8 rounded-full "
+                                        src={Authorimg}
+                                        alt=""
+                                    />
+                                    <h1 className='text-sm '>by </h1>
+                                    <h1 className="font-semibold text-sm text-rose-500">{Author} </h1>
+                                    <div className='flex items-center'>
+                                        <h1>{rating}</h1>
+                                        <AiFillStar className='text-orange-500 ml-1 ' />
+                                    </div>
+                                    <h1>({reviews} Review)</h1>
+                                    <MdOutlinePersonOutline />
+                                    <h1 className='text-xs '>{persons}</h1>
                                 </div>
-                                <h1>({reviews} Review)</h1>
-                                <MdOutlinePersonOutline />
-                                <h1 className='text-xs '>{persons}</h1>
+                                <div>
+                                    <button onClick={handleClick} className={`flex items-center gap-2 text-sm`}>
+                                        <FaHeart className={` ${isClicked ? 'text-teal-600' : 'text-black'} `} />
+                                        {
+                                            isClicked ? <h1>Added to wishlist</h1> : <h1>Add to wishlist</h1>
+                                        }
+
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div className='w-full'>

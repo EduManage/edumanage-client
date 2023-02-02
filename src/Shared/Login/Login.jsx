@@ -43,7 +43,7 @@ const Login = () => {
       .catch((e) => console.error(e));
   };
   return (
-    <div className=' flex flex-col md:flex-row justify-evenly items-center py-24 font-poppins-em gap-10'>
+    <div className=' flex flex-col md:flex-row justify-evenlyn items-center py-24 font-poppins-em gap-10'>
       <div>
         <img src={Security} alt="" />
       </div>
