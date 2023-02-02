@@ -72,7 +72,7 @@ const Navbar = () => {
                     <Link to="/news">NEWS</Link>
                 </div>
                 <div className="hover-underline-animation">
-                    <Link to="/">CONTRACT</Link>
+                    <Link to="/support-session">SUPPORT</Link>
                 </div>
             </div>
             {/* route names end  */}

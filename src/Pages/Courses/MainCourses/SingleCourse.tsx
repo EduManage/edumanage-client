@@ -6,7 +6,6 @@ import { MdOutlinePersonOutline, MdOutlineClass, MdArticle, MdDownload, MdOutlin
 import { BiBookContent } from "react-icons/bi";
 import { TbLanguage } from "react-icons/tb";
 import sharing from '../../../Assets/sharing.png'
-import { useFormState } from 'react-hook-form';
 
 const SingleCourse = () => {
     const courseDetails: any = useLoaderData();
