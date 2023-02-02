@@ -47,12 +47,19 @@ const News = () => {
                 <h1 className="text-4xl text-white">Today's News</h1>
             </div>
             {
-                loading ? <p className="text-2xl text-center">loading...</p> : (
+                loading ? <div className="w-12 h-12 rounded-full animate-spin
+                border-4 border-solid border-green-500 border-t-transparent my-5 mx-auto"></div> : (
                     <div className="md:w-9/12 flex flex-col-reverse md:flex-row justify-center items-start gap-8 mt-8 mx-auto">
                         <div className='md:w-4/6'>
-                            {filteredData.map(news => <NewsCard 
-                            key={news._id}
-                            news={news} />)}
+                            {
+                                filteredData.length === 0 ?
+                                    newsData.map(news => <NewsCard
+                                        key={news._id}
+                                        news={news} />) :
+                                    filteredData.map(news => <NewsCard
+                                        key={news._id}
+                                        news={news} />)
+                            }
                         </div>
                         <div className='w-full md:w-3/12 text-center'>
                             <h1 className="text-2xl bg-teal-500 rounded text-white w-full mb-4 px-4 py-2">Category</h1>
