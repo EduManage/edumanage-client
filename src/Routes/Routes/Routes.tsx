@@ -12,7 +12,7 @@ import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse';
-import AllInstructor from "../../Pages/AdminDashboard/Instructor/AllInstructor/AllInstructor";
+import AllInstructor from "../../Pages/Instructor/AllInstructor/AllInstructor";
 import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils"
 import AllBooks from "../../Pages/AdminDashboard/Books/AllBooks/AllBooks";
 import AddBook from "../../Pages/AdminDashboard/Books/AddBook/AddBook";
@@ -21,6 +21,7 @@ import AddParents from "../../Pages/AdminDashboard/Parents/AddParents/AddParents
 import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
 import SupportSession from "../../Pages/SupportSession/SupportSession";
+import Wishlist from "../../Shared/Wishlist/Wishlist";
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ export const router = createBrowserRouter([
       {
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist></Wishlist>
       },
       {
         path: "/instrctorDetails/:id",

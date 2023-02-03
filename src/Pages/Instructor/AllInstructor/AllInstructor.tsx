@@ -16,13 +16,13 @@ const AllInstructor = () => {
   // console.log(allInstructor);
   const [instructor, setinstructor] = useState<any[]>([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/instructor`)
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructor`)
       .then((res) => res.json())
       .then((data) => setinstructor(data));
   }, []);
   const handleInstructor = (tata: any) => {
     const instructorID = tata.id;
-    fetch(`http://localhost:5000/instructorDetails`, {
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -37,25 +37,8 @@ const AllInstructor = () => {
       });
   };
   return (
-    <div className="container mx-auto py-44 ">
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
-        {/* <div className="mx-auto text-center">
-          <div>
-            <div>
-              <img
-                src={te1}
-                alt=""
-                className="rounded-full h-32 w-32 mx-auto box-shadow my-5"
-              />
-            </div>
-            <div>
-              <h3>
-                <samp className="font-extrabold">Johnson</samp> Doe
-              </h3>
-              <h4>Business Math</h4>
-            </div>
-          </div>
-        </div> */}
+    <div className="flex justify-center py-24 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-3/4">
         {instructor.map((ins, i) => (
           <div className="mx-auto text-center">
             <div>
@@ -77,7 +60,7 @@ const AllInstructor = () => {
                     </samp>{" "}
                     {ins.titleBack ? ins.titleBack : "hemm"}
                   </h3>
-                  <h4>Business Math</h4>
+                  
                 </div>
               </Link>
             </div>

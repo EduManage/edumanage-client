@@ -71,9 +71,6 @@ const Navbar = () => {
                 <div className="hover-underline-animation">
                     <Link to="/news">NEWS</Link>
                 </div>
-                <div className="hover-underline-animation">
-                    <Link to="/support-session">SUPPORT</Link>
-                </div>
             </div>
             {/* route names end  */}
 

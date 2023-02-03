@@ -13,12 +13,12 @@ const Courses = () => {
     // }, [])
     return (
         <div>
-            <div className=' pb-24 pt-36 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
+            {/* <div className=' pb-24 pt-36 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
                 style={{ backgroundImage: `url(${homeBg})` }}>
                 <h1 className='text-4xl font-bold'>Our Courses</h1>
                 <p className='font-semibold'>Home - Courses</p>
-            </div>
-            <div className='w-full flex justify-center items-center pt-10 font-poppins-em'>
+            </div> */}
+            <div className='w-full flex justify-center items-center pt-20 font-poppins-em'>
                 <div className='w-3/4 flex '>
                     {/* left catagories bar start  */}
                     <div className='w-1/3'>

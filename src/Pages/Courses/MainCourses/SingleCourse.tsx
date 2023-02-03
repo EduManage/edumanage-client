@@ -6,33 +6,48 @@ import { MdOutlinePersonOutline, MdOutlineClass, MdArticle, MdDownload, MdOutlin
 import { BiBookContent } from "react-icons/bi";
 import { TbLanguage } from "react-icons/tb";
 import sharing from '../../../Assets/sharing.png'
+import { toast } from 'react-hot-toast';
 
 const SingleCourse = () => {
     const courseDetails: any = useLoaderData();
-    const { price, category, title, rating, reviews, Authorimg, Author, persons, picture, details, totallecture, duiration, articles, downloadbleitem, asssignment, language } = courseDetails;
-    // console.log(SingleCourse)
+    const { price, category, title, rating, reviews, Authorimg, Author, persons, picture, details, totallecture, duiration, articles, downloadbleitem, asssignment, language, _id } = courseDetails;
+    console.log(courseDetails)
 
     const [isClicked, setIsClicked] = useState(false);
 
     const handleClick = () => {
         setIsClicked(!isClicked);
+        // const id = _id;
+        // const ct = category;
+        // const pr = price;
+        // const ttl = title;
+        const info = {
+            _id,
+            category,
+            price,
+            title,
+            picture
+        }
 
 
-        // fetch(`https://eoc-server.vercel.app/status/${postInfo._id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(currentLike)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
+        fetch(`https://recyclelib-server.vercel.app/wishlist`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(info)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged === true) {
+                    toast.success("Course successfully added to wishlist");
+                }
 
-        //         // refetch();
-        //         // form.reset();
 
-        //     })
+                // refetch();
+                // form.reset();
+
+            })
 
     };
     return (
