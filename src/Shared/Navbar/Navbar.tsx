@@ -5,6 +5,7 @@ import ig from "../../Assets/instagram.png";
 import tw from "../../Assets/twitter.png";
 import yt from "../../Assets/youtube.png";
 import em from '../../Assets/navEM.png'
+import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import "./Navbar.css";
 import { AuthContext } from "../../UserContext/UserContext";
 
@@ -93,6 +94,9 @@ const Navbar = () => {
                             <button onClick={handleLogout} className="px-5 py-2 shadow-lg rounded-2xl bg-white hover:shadow-xl ease-in-out duration-300">
                                 SIGN OUT
                             </button>
+                            <Link to='/wishlist' className="tooltip tooltip-bottom " data-tip='Wishlist'>
+                                <BsFillBookmarkHeartFill className="text-rose-600 text-xl"/>
+                            </Link>
                         </div>
                         :
                         <div className="flex items-center gap-4">
@@ -119,16 +123,16 @@ const Navbar = () => {
             </div>
             {/* auth section end */}
 
-      {/* social icon start  */}
-      <div className="w-1/6 hidden md:flex justify-center items-center gap-2 font-medium">
-        <img className="w-4" src={fb} alt="" />
-        <img className="w-4" src={ig} alt="" />
-        <img className="w-4" src={tw} alt="" />
-        <img className="w-4" src={yt} alt="" />
-      </div>
-      {/* social icon end  */}
-    </div>
-  );
+            {/* social icon start  */}
+            <div className="w-1/6 hidden md:flex justify-center items-center gap-2 font-medium">
+                <img className="w-4" src={fb} alt="" />
+                <img className="w-4" src={ig} alt="" />
+                <img className="w-4" src={tw} alt="" />
+                <img className="w-4" src={yt} alt="" />
+            </div>
+            {/* social icon end  */}
+        </div>
+    );
 };
 
 export default Navbar;

@@ -8,7 +8,7 @@ import { AuthContext } from '../../../UserContext/UserContext';
 
 
 const MainCourses = () => {
-    const {loading} = useContext(AuthContext);
+    const { loading } = useContext(AuthContext);
     const [courses, setCourses] = useState([]);
     // const { data: courses = [], refetch } = useQuery({
     //     queryKey: ['courses'],
@@ -34,7 +34,7 @@ const MainCourses = () => {
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
-    if (loading) {
+    if (courses.length === 0) {
         return <Loader></Loader>
     }
 

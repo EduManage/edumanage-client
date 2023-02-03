@@ -10,15 +10,9 @@ const Wishlist = () => {
     //     queryFn: () => fetch(`https://recyclelib-server.vercel.app/Wishlist`)
     //         .then(res => res.json())
     // })
-    interface wishlist {
+    interface w {
         title: string;
         price: number;
-        rating: number;
-        Author: string;
-        Authorimg: string;
-        reviews: number;
-        persons: number;
-        details: string;
         category: string;
         _id: number;
         picture: string;
@@ -29,14 +23,29 @@ const Wishlist = () => {
             .then(res => res.json())
             .then(data => setWishlist(data))
     }, [])
-    if (loading) {
+    if (wishlist.length === 0) {
         return <Loader></Loader>
     }
     return (
-        <div className='pt-24'>
+        <div className='pt-24 flex justify-center'>
+            <div className='w-3/4'>
                 {
-                    wishlist.length
+                    wishlist.map((w: w, i) => <div key={i}>
+                        <div className='border p-3 grid grid-cols-6 gap-5  items-center font-semibold mb-2'>
+                            <img src={w.picture} className='w-20' alt="" />
+                            <h1>{w.title}</h1>
+                            <h1>{w.category}</h1>
+                            <h1 className='text-lg text-rose-600'>{w.price}</h1>
+                            <button className='bg-teal-600 rounded-2xl text-white p-2 font-semibold hover:bg-teal-700 ease-in-out duration-300'>Pay</button>
+                            <button className='bg-rose-600 rounded-2xl text-white p-2 font-semibold hover:bg-rose-700 ease-in-out duration-300'>Remove</button>
+                            
+
+
+                        </div>
+
+                    </div>)
                 }
+            </div>
         </div>
     );
 };
