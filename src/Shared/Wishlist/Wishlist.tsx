@@ -27,7 +27,7 @@ const Wishlist = () => {
         return <Loader></Loader>
     }
     return (
-        <div className='pt-24 flex justify-center'>
+        <div className='pt-24 flex justify-center font-poppins-em'>
             <div className='w-3/4'>
                 {
                     wishlist.map((w: w, i) => <div key={i}>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Loader from "../../../Shared/Loader/Loader";
 // import { useQuery } from "@tanstack/react-query";
 import "./AllInstructor.css";
 
@@ -36,6 +37,9 @@ const AllInstructor = () => {
         }
       });
   };
+  if(instructor.length===0){
+    return <Loader></Loader>
+  }
   return (
     <div className="flex justify-center py-24 ">
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-3/4">

@@ -15,7 +15,7 @@ const Footer = () => {
     console.log(data);
   };
   return (
-    <footer className="text-left  bg-gray-800 flex justify-center mt-28">
+    <footer className="text-left  bg-gray-800 flex justify-center mt-28 font-poppins-em">
       <div className="container w-3/4">
         <div className="p-10 bg-gray-800 text-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
