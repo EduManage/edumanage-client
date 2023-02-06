@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useTitle } from '../../../../hooks/useTitle';
-import male from "./../../../../assets/Students/male.png";
+import male from "./../../../../Assets/Students/male.png";
 import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
-import Loader from '../../../../SharedPage/Loader/Loader';
+import Loader from '../../../../Shared/Loader/Loader';
 import DeleteModal from '../../../../SharedPage/DeleteModal/DeleteModal';
 import EditBooks from '../EditBooks/EditBooks';
 import { toast } from 'react-hot-toast';

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTitle } from "../../../../hooks/useTitle";
 import DashboardTopHeader from "../../DashboardTopHeader/DashboardTopHeader";
 import { useQuery } from "@tanstack/react-query";
-import Loader from "../../../../SharedPage/Loader/Loader";
+import Loader from "../../../../Shared/Loader/Loader";
 import DeleteModal from "../../../../SharedPage/DeleteModal/DeleteModal";
 import { toast } from "react-hot-toast";
 import EditNewClass from "../EditNewClass/EditNewClass";

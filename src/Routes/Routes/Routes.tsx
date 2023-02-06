@@ -22,6 +22,7 @@ import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStud
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import Wishlist from "../../Shared/Wishlist/Wishlist";
+import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -102,6 +103,10 @@ export const router = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard></AdminDashboard>,
     children: [
+      {
+        path: "/admin",
+        element: <AdminDashboardHome/>
+      },
       {
         path: "/admin/add-students",
         element: <AddStudent></AddStudent>,

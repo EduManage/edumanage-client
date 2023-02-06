@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import male from "./../../../../assets/Students/male.png";
-import female from "./../../../../assets/Students/female.png";
+import male from "./../../../../Assets/Students/male.png";
+import female from "./../../../../Assets/Students/female.png";
 import "./AllStudents.css";
 import { useTitle } from "../../../../hooks/useTitle";
 import DashboardTopHeader from "../../DashboardTopHeader/DashboardTopHeader";
 import { useQuery } from "@tanstack/react-query";
-import Loader from "../../../../SharedPage/Loader/Loader";
+import Loader from "../../../../Shared/Loader/Loader";
 import { toast } from "react-hot-toast";
 import DeleteModal from "../../../../SharedPage/DeleteModal/DeleteModal";
 import EditStudents from "../EditStudents/EditStudents";

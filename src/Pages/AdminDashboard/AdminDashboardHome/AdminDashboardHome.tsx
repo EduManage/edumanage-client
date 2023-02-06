@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSampleDemo from './../../../Assets/1.png'
+import ImageSampleDemo from '../../../Assets/1.png'
 const AdminDashboardHome = () => {
     return (
         <div>

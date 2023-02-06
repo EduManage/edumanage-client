@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Input } from "../../../StyleComponent/Input.styled";
 import { Label } from "../../../StyleComponent/Label.styled";
-import Loader from "../../../../SharedPage/Loader/Loader";
+import Loader from "../../../../Shared/Loader/Loader";
 import { ImCross } from "react-icons/im";
 
 type EditProps = {

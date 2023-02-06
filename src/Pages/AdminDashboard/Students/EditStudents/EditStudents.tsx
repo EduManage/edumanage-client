@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { Input } from "../../../StyleComponent/Input.styled";
 import { Label } from "../../../StyleComponent/Label.styled";
 import { Textarea } from "../../../StyleComponent/Textarea.styled";
-import Loader from "../../../../SharedPage/Loader/Loader";
+import Loader from "../../../../Shared/Loader/Loader";
 import { ImCross } from "react-icons/im";
 import useImageUpload from "../../../../hooks/useImageUpload";
 
