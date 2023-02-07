@@ -20,9 +20,12 @@ import AllParents from "../../Pages/AdminDashboard/Parents/AllParents/AllParents
 import AddParents from "../../Pages/AdminDashboard/Parents/AddParents/AddParents";
 import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
-import SupportSession from "../../Pages/SupportSession/SupportSession";
+
 import Wishlist from "../../Shared/Wishlist/Wishlist";
 import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
+
+import SupportSession from "../../Pages/SupportSession/SupportSession";
+import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
 
 export const router = createBrowserRouter([
   {
@@ -65,8 +68,12 @@ export const router = createBrowserRouter([
         element: <News></News>
       },
       {
+        path: "/student-support",
+        element: <StudentSupport />
+      },
+      {
         path: "/support-session",
-        element: <SupportSession></SupportSession>
+        element: <SupportSession />
       },
       {
         path: "/news/:id",
