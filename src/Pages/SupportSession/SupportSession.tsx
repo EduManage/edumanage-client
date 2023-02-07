@@ -29,7 +29,7 @@ const SupportSession = () => {
       meetingCategory,
       meetingDescription,
     };
-    fetch("http://localhost:5000/single-schedule", {
+    fetch("http://localhost:5000/support", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,7 +41,7 @@ const SupportSession = () => {
         console.log(data);
         if (data.acknowledged) {
           form.reset();
-          toast.success("Schedule Making Successfully");
+          toast.success("Support Making Successfully");
         }
       });
   };
