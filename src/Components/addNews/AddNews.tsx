@@ -82,8 +82,8 @@ const AddNews = () => {
         <input required name='description' className="appearance-none block w-full h-28 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="description" />
         <select required className="mb-6 border border-gray-200  appearance-none w-full py-1 px-2 bg-white" name="category" id="frm-whatever">
           <option value="">Chosse Category</option>
-          <option value="programming">programming</option>
-          <option value="developement">developement</option>
+          <option value="Programming">programming</option>
+          <option value="Developement">developement</option>
           <option value="Design">design</option>
           <option value="Music">music</option>
           <option value="Gaming">gaming</option>
