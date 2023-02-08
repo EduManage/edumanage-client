@@ -20,6 +20,8 @@ import AllParents from "../../Pages/AdminDashboard/Parents/AllParents/AllParents
 import AddParents from "../../Pages/AdminDashboard/Parents/AddParents/AddParents";
 import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStudents";
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
+import AddNews from "../../Components/addNews/AddNews";
+import AllNews from "../../Pages/News/AllNews";
 
 import Wishlist from "../../Shared/Wishlist/Wishlist";
 import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
@@ -103,6 +105,14 @@ export const router = createBrowserRouter([
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
+      },
+      {
+        path : 'addNews',
+        element : <AddNews/>
+      },
+      {
+        path : 'allNews',
+        element : <AllNews/>
       }
     ],
   },

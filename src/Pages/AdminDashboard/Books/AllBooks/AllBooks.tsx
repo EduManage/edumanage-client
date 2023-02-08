@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useTitle } from '../../../../hooks/useTitle';
-import male from "./../../../../Assets/Students/male.png";
+import male from "../../../../Assets/Students/male.png"
 import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 import Loader from '../../../../Shared/Loader/Loader';
 import DeleteModal from '../../../../SharedPage/DeleteModal/DeleteModal';
 import EditBooks from '../EditBooks/EditBooks';
@@ -78,7 +79,9 @@ const handleDeleteModal= (name:string, id:string )=>{
   };
     return (
         <>
-         {editBookModal && <EditBooks id={id} setEditBookModal={setEditBookModal} refetch={refetch}></EditBooks>}
+
+         {/* {editBookModal && <EditBooks id={id} setEditBookModal={setEditBookModal} refetch={refetch}></EditBooks>} */}
+
         <div className="all-students-section py-5 px-7">
       <DashboardTopHeader name="Books" title="All Books"></DashboardTopHeader>
         <div>
@@ -151,7 +154,9 @@ const handleDeleteModal= (name:string, id:string )=>{
             </div>
        
           </div>
-          {deleteModal && <DeleteModal name={name} id={id} handleDelete={handleDelete} loading={loading}></DeleteModal>}
+
+          {/* {deleteModal && <DeleteModal name={name} id={id} handleDelete={handleDelete} loading={loading}></DeleteModal>} */}
+
         </div>
       </div>
         </>

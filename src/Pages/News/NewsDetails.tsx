@@ -4,7 +4,9 @@ import { useContext } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
 import { FaFolderPlus, FaUser, FaWarehouse } from "react-icons/fa";
+import { MdEdit, MdModeEdit } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
+import UpdateNewsModal from "../../Components/updateNewsModal/UpdateNewsModal";
 import { AuthContext } from "../../UserContext/UserContext";
 import CommentBox from "./CommentBox";
 import CommentForm from "./CommentForm";
@@ -74,11 +76,32 @@ const NewsDetails = () => {
                         <span> comments </span>
                     </div>
                 </div>
+
                 <h1 className=" text-3xl font-semibold mt-5">{title}</h1>
                 <p className='text-base mt-2'>{description}</p>
                 <div className="flex justify-start items-center mt-6 gap-8">
                     <p className="text-xl font-semibold">Share this post with your friends</p>
                     <div className="flex justify-between items-center gap-2">
+
+                <div className="flex justify-between items-center gap-2">
+                    <FaUser className='text-teal-500' />
+                    <span>{author}</span>
+                </div>
+                <div className="flex justify-between items-center gap-2">
+                    <FaWarehouse className='text-teal-500' />
+                    <span> comments </span>
+                </div>
+            </div>
+            <div className="flex justify-between items-center">
+                <h1 className=" text-3xl font-semibold mt-5">{title}</h1>
+                <label htmlFor="my-modal-3" className="cursor-pointer">  <MdEdit size={20}/></label>
+              
+            </div>
+            <p className='text-base mt-2'>{description}</p>
+            <div className="flex justify-start items-center mt-6 gap-8">
+                <p className="text-xl font-semibold">Share this post with your friends</p>
+                <div className="flex justify-between items-center gap-2">
+
 
                         <FacebookShareButton
                             url={shareUrl}
@@ -100,8 +123,18 @@ const NewsDetails = () => {
                     />)
                 }
             </div>
+
+            <CommentForm handleCommentForm={handleCommentForm} />
+            {
+                comments.map((cmnt: any) => <CommentBox
+                    comment={cmnt}
+                />)
+            }
+            <UpdateNewsModal news={news}/>
+
         </div>
     );
 };
 
 export default NewsDetails;
+

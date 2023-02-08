@@ -21,9 +21,9 @@ root.render(
     <ProSidebarProvider>
 
       <QueryClientProvider client={queryClient}>
-       <UserContext>
-        <App />
-      </UserContext>
+        <UserContext>
+            <App />
+        </UserContext>
       </QueryClientProvider>
 
     </ProSidebarProvider>

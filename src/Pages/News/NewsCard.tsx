@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFolderPlus, FaUser, FaWarehouse } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import UpdateNewsModal from '../../Components/updateNewsModal/UpdateNewsModal';
 
 type news = {
     _id: number;
@@ -37,6 +38,7 @@ const NewsCard = ({ news }: any) => {
                     Continue Reading
                 </button>
             </Link>
+            {/* <UpdateNewsModal/> */}
         </div>
     );
 };

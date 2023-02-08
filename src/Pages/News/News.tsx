@@ -75,7 +75,6 @@ const News = () => {
                     </div>
                 )
             }
-
         </div>
     );
 };
