@@ -12,7 +12,7 @@ import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse';
-import AllInstructor from "../../Pages/AdminDashboard/Instructor/AllInstructor/AllInstructor";
+import AllInstructor from "../../Pages/Instructor/AllInstructor/AllInstructor";
 import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils"
 import AllBooks from "../../Pages/AdminDashboard/Books/AllBooks/AllBooks";
 import AddBook from "../../Pages/AdminDashboard/Books/AddBook/AddBook";
@@ -22,6 +22,12 @@ import AllStudents from "../../Pages/AdminDashboard/Students/AllStudents/AllStud
 import AddStudent from "../../Pages/AdminDashboard/Students/AddStudent/AddStudent";
 import AddNews from "../../Components/addNews/AddNews";
 import AllNews from "../../Pages/News/AllNews";
+
+import Wishlist from "../../Shared/Wishlist/Wishlist";
+import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
+
+import SupportSession from "../../Pages/SupportSession/SupportSession";
+import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
 
 export const router = createBrowserRouter([
   {
@@ -54,10 +60,6 @@ export const router = createBrowserRouter([
         element: <AllInstructor></AllInstructor>,
       },
       {
-        path: "/about",
-        element: <About></About>,
-      },
-      {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`),
@@ -66,6 +68,14 @@ export const router = createBrowserRouter([
       {
         path: "/news",
         element: <News></News>
+      },
+      {
+        path: "/student-support",
+        element: <StudentSupport />
+      },
+      {
+        path: "/support-session",
+        element: <SupportSession />
       },
       {
         path: "/news/:id",
@@ -88,6 +98,10 @@ export const router = createBrowserRouter([
         element: <AllInstructor></AllInstructor>,
       },
       {
+        path: "/wishlist",
+        element: <Wishlist></Wishlist>
+      },
+      {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
@@ -106,6 +120,10 @@ export const router = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard></AdminDashboard>,
     children: [
+      {
+        path: "/admin",
+        element: <AdminDashboardHome/>
+      },
       {
         path: "/admin/add-students",
         element: <AddStudent></AddStudent>,

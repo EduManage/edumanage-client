@@ -1,26 +1,85 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTitle } from '../../../../hooks/useTitle';
 import male from "./../../../../Assets/Students/male.png";
 import female from "./../../../../Assets/Students/female.png";
 import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../../../Shared/Loader/Loader';
+import EditTeachers from '../EditTeachers/EditTeachers';
+import { toast } from 'react-hot-toast';
+import DeleteModal from '../../../../SharedPage/DeleteModal/DeleteModal';
 
 const AllTeachers = () => {
     useTitle("All Teachers")
+    const [editTeacherModal, setEditTeacherModal] = useState(false)
+    const [id, setId] = useState("")
+    const [deleteModal, setDeleteModal] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [name, setName] = useState("")
     const [query, setQuery] = useState({
       name: "",
       email: "",
       parentName: ""
     })
-    const { isLoading, data: teachers=[] } = useQuery({
+    const { isLoading, error, refetch, data: teachers=[] } = useQuery({
       queryKey: ['teachers'],
       queryFn: async () =>
-        await fetch(`${process.env.REACT_APP_API_URL}/teachers`)
+        await fetch(`${process.env.REACT_APP_API_URL}/teachers`, {
+          headers: {
+            'authorization': `${localStorage.getItem("token")}`,
+            'Content-Type': 'application/json'
+          }
+        })
         .then((res) => res.json())
         .then((data)=>data.data)
   })
+
+  // Edit Modal Open
+  const handleEdit = (id:string)=>{
+    setId(id);
+    setEditTeacherModal(true)
+  }
+  
+  // Delete Teacher
+const handleDeleteModal= (name:string, id:string )=>{
+  setDeleteModal(true);
+  setId(id);
+  setName(name)
+}
+  const handleDelete = (id:string)=>{
+    setDeleteModal(true);
+    setLoading(true)
+    fetch(`${process.env.REACT_APP_API_URL}/teachers/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `${localStorage.getItem("token")}`,
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.data.acknowledged) {
+          toast.success("Delete Parent Successful!");
+          setLoading(false);
+          setDeleteModal(false);
+          refetch();
+        }
+        if (data.success === false) {
+          toast.error("Delete Parent Fail!");
+          setLoading(false);
+          setDeleteModal(false);
+        }
+      })
+      .catch((error) => {
+        toast.error("Delete Parent Fail!");
+        setLoading(false);
+        setDeleteModal(false);
+        console.log(error)
+      });
+  };
     return (
+       <>
+             {editTeacherModal && <EditTeachers id={id} setEditTeacherModal={setEditTeacherModal} refetch={refetch}></EditTeachers>}
         <div className="all-students-section py-5 px-7">
        <DashboardTopHeader name="Teachers" title="All Teachers"></DashboardTopHeader>
         <div>
@@ -86,17 +145,21 @@ const AllTeachers = () => {
                     <td>{teacher.dateOfBirth}</td>
                     <td>{teacher.phone}</td>
                     <td>{teacher.email}</td>
-                    <td>Edit || Delete</td>
+                    <td><label htmlFor="edit-modal" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleEdit(teacher._id)}>Edit</label>  <label htmlFor="delete-modal" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDeleteModal(teacher?.name, teacher?._id)}>Delete</label></td>
                   </tr>
                 ))}
               </tbody>
             </table>
             {isLoading && <Loader></Loader>}
+            <>{error && <p className="font-bold text-lg pt-5">Something went wrong</p>}</>
             </div>
        
           </div>
+{deleteModal && <DeleteModal name={name} id={id} handleDelete={handleDelete} loading={loading}></DeleteModal>}
+
         </div>
       </div>
+       </>
     );
 };
 

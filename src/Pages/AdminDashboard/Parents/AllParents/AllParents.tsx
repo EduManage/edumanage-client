@@ -1,26 +1,86 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTitle } from '../../../../hooks/useTitle';
 import male from "./../../../../Assets/Students/male.png";
 import female from "./../../../../Assets/Students/female.png";
 import DashboardTopHeader from '../../DashboardTopHeader/DashboardTopHeader';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../../../Shared/Loader/Loader';
+import EditParents from '../EditParents/EditParents';
+import { toast } from 'react-hot-toast';
+import DeleteModal from '../../../../SharedPage/DeleteModal/DeleteModal';
 
 const AllParents = () => {
-    useTitle("All parentss")
+    useTitle("All parents")
+    const [id, setId] = useState("")
+    const [editParentModal, setEditParentModal] = useState(false)
+    const [deleteModal, setDeleteModal] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [name, setName] = useState("")
     const [query, setQuery] = useState({
       name: "",
       email: "",
       phone: ""
     })
-    const { isLoading, data: parents=[] } = useQuery({
+    const { isLoading, error, refetch, data: parents = [] } = useQuery({
       queryKey: ['parents'],
       queryFn: async () =>
-        await fetch(`${process.env.REACT_APP_API_URL}/parents`)
+        await fetch(`${process.env.REACT_APP_API_URL}/parents`, {
+          headers: {
+            'authorization': `${localStorage.getItem("token")}`,
+            'Content-Type': 'application/json'
+          }
+        })
         .then((res) => res.json())
         .then((data)=>data.data)
   })
+
+  // Open Edit Modal
+  const handleEdit = (id:string)=>{
+    setId(id);
+    setEditParentModal(true)
+  }
+  
+  // Delete Parent
+const handleDeleteModal= (name:string, id:string )=>{
+  setDeleteModal(true);
+  setId(id);
+  setName(name)
+}
+  const handleDelete = (id:string)=>{
+    setDeleteModal(true);
+    setLoading(true)
+    fetch(`${process.env.REACT_APP_API_URL}/parents/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `${localStorage.getItem("token")}`,
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.data.acknowledged) {
+          toast.success("Delete Parent Successful!");
+          setLoading(false);
+          setDeleteModal(false);
+          refetch();
+        }
+        if (data.success === false) {
+          toast.error("Delete Parent Fail!");
+          setLoading(false);
+          setDeleteModal(false);
+        }
+      })
+      .catch((error) => {
+        toast.error("Delete Parent Fail!");
+        setLoading(false);
+        setDeleteModal(false);
+        console.log(error)
+      });
+  };
+  
     return (
+      <>
+      {editParentModal && <EditParents id={id} setEditParentModal={setEditParentModal} refetch={refetch}></EditParents>}
         <div className="all-students-section py-5 px-7">
        <DashboardTopHeader name="Parents" title="All Parents"></DashboardTopHeader>
         <div>
@@ -59,9 +119,9 @@ const AllParents = () => {
                 </tr>
               </thead>
               <tbody className="text-center">
-                {parents?.filter((parents:any)=>parents?.name?.toLowerCase().includes(query.name))
-              .filter((parents:any)=>parents?.email?.toLowerCase().includes(query.email))
-              .filter((parents:any)=>parents?.phone?.toLowerCase().includes(query.phone))
+                {parents?.filter((parent:any)=>parent?.name?.toLowerCase().includes(query.name))
+              .filter((parent:any)=>parent?.email?.toLowerCase().includes(query.email))
+              .filter((parent:any)=>parent?.phone?.toLowerCase().includes(query.phone))
                 
                 .map((parents:any, i:any) => (
                   <tr key={parents._id} className={`${i % 2 ? "" : "active"}`}>
@@ -89,17 +149,22 @@ const AllParents = () => {
                     <td>{parents.dateOfBirth}</td>
                     <td>{parents.phone}</td>
                     <td>{parents.email}</td>
-                    <td>Edit || Delete</td>
+                    <td><label htmlFor="edit-modal" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleEdit(parents._id)}>Edit</label>  <label htmlFor="delete-modal" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={()=>handleDeleteModal(parents?.name, parents?._id)}>Delete</label></td>
                   </tr>
                 ))}
               </tbody>
             </table>
             {isLoading && <Loader></Loader>}
+            <>{error && <p className="font-bold text-lg pt-5">Something went wrong</p>}</>
             </div>
        
           </div>
         </div>
+
+{deleteModal && <DeleteModal name={name} id={id} handleDelete={handleDelete} loading={loading}></DeleteModal>}
+
       </div>
+      </>
     );
 };
 
