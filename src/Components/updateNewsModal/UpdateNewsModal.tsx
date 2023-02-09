@@ -18,7 +18,7 @@ const UpdateNewsModal = ({ news }: any) => {
             title,
             description
         }
-        fetch(`http://localhost:5000/updateNews/${_id}`, {
+        fetch(`https://edu-manage-server.vercel.app/updateNews/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

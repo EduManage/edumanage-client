@@ -2,7 +2,6 @@ import React from 'react';
 
 const CommentBox = ({ comment }: any) => {
     const { name, userComment, postDate, userPhoto } = comment
-    console.log(userComment);
     return (
         <div className='w-4/6 mx-auto bg-black/5 mt-3 rounded p-4'>
             <div className="flex justify-between items-center">
