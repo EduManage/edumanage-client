@@ -1,4 +1,3 @@
-
 import React from 'react';
 import blob from '../../Assets/blobHeaderShape.png';
 import headerImg from '../../Assets/homepagePicture.png';
@@ -10,7 +9,6 @@ import JoinWithUs from '../../Components/JoinWithUsBanner/JoinWithUs';
 import JoinToday from '../../Components/joinToday/joinToday';
 import HeroSec1 from '../../Components/HeroSec1/HeroSec1';
 import HeroSec2 from '../../Components/HeroSec2/HeroSec2';
-
 import wave1 from "../../Assets/waveOpacity-8.svg";
 import wave2 from "../../Assets/wave-2.svg";
 import "./Home.css";

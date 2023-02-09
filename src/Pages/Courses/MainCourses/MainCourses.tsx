@@ -3,11 +3,12 @@ import { AiFillStar } from "react-icons/ai";
 import { MdOutlinePersonOutline } from "react-icons/md";
 
 import { Link } from 'react-router-dom';
+import Loader from '../../../Shared/Loader/Loader';
 import { AuthContext } from '../../../UserContext/UserContext';
 
 
 const MainCourses = () => {
-    const {loading} = useContext(AuthContext);
+    const { loading } = useContext(AuthContext);
     const [courses, setCourses] = useState([]);
     // const { data: courses = [], refetch } = useQuery({
     //     queryKey: ['courses'],
@@ -33,12 +34,8 @@ const MainCourses = () => {
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
-    if (loading) {
-        return <div className="flex items-center justify-center space-x-2">
-            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
-            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
-            <div className="w-4 h-4 rounded-full animate-pulse bg-cyan-400"></div>
-        </div>
+    if (courses.length === 0) {
+        return <Loader></Loader>
     }
 
     return (

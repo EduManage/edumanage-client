@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Loader from "../../../Shared/Loader/Loader";
 // import { useQuery } from "@tanstack/react-query";
 import "./AllInstructor.css";
 
@@ -16,13 +17,13 @@ const AllInstructor = () => {
   // console.log(allInstructor);
   const [instructor, setinstructor] = useState<any[]>([]);
   useEffect(() => {
-    fetch(`https://edu-manage-server.vercel.app/instructor`)
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructor`)
       .then((res) => res.json())
       .then((data) => setinstructor(data));
   }, []);
   const handleInstructor = (tata: any) => {
     const instructorID = tata.id;
-    fetch(`https://edu-manage-server.vercel.app/instructorDetails`, {
+    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -36,26 +37,12 @@ const AllInstructor = () => {
         }
       });
   };
+  if(instructor.length===0){
+    return <Loader></Loader>
+  }
   return (
-    <div className="container mx-auto py-44 ">
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
-        {/* <div className="mx-auto text-center">
-          <div>
-            <div>
-              <img
-                src={te1}
-                alt=""
-                className="rounded-full h-32 w-32 mx-auto box-shadow my-5"
-              />
-            </div>
-            <div>
-              <h3>
-                <samp className="font-extrabold">Johnson</samp> Doe
-              </h3>
-              <h4>Business Math</h4>
-            </div>
-          </div>
-        </div> */}
+    <div className="flex justify-center py-24 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-3/4">
         {instructor.map((ins, i) => (
           <div className="mx-auto text-center">
             <div>
@@ -77,7 +64,7 @@ const AllInstructor = () => {
                     </samp>{" "}
                     {ins.titleBack ? ins.titleBack : "hemm"}
                   </h3>
-                  <h4>Business Math</h4>
+                  
                 </div>
               </Link>
             </div>
