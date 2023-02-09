@@ -11,9 +11,9 @@ import News from "../../Pages/News/News";
 import NewsDetails from "../../Pages/News/NewsDetails";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
-import SingleCourse from '../../Pages/Courses/MainCourses/SingleCourse';
+import SingleCourse from "../../Pages/Courses/MainCourses/SingleCourse";
 import AllInstructor from "../../Pages/Instructor/AllInstructor/AllInstructor";
-import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils"
+import TeacherDeatils from "../../Pages/AdminDashboard/Instructor/TeacherDetails/TeacherDeatils";
 import AllBooks from "../../Pages/AdminDashboard/Books/AllBooks/AllBooks";
 import AddBook from "../../Pages/AdminDashboard/Books/AddBook/AddBook";
 import AllParents from "../../Pages/AdminDashboard/Parents/AllParents/AllParents";
@@ -26,6 +26,7 @@ import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/Ad
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+import SupportAdmin from "../../Pages/SupportEngine/AupportAdmin/SupportAdmin";
 
 export const router = createBrowserRouter([
   {
@@ -58,38 +59,44 @@ export const router = createBrowserRouter([
         element: <AllInstructor></AllInstructor>,
       },
       {
+        path: "/support",
+        element: <SupportAdmin />,
+      },
+      {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
-        loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`),
-
+        loader: ({ params }) =>
+          fetch(
+            `https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`
+          ),
       },
       {
         path: "/news",
-        element: <News></News>
+        element: <News></News>,
       },
       {
         path: "/student-support",
-        element: <StudentSupport />
+        element: <StudentSupport />,
       },
       {
         path: "/support-session",
-        element: <SupportSession />
+        element: <SupportSession />,
       },
       {
         path: "/news/:id",
         element: <NewsDetails></NewsDetails>,
-        loader: ({ params }) => fetch(`https://edumanage-server.vercel.app/news/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://edumanage-server.vercel.app/news/${params.id}`),
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
-
       },
       {
         path: "/courses/:id",
         element: <SingleCourse />,
-        loader: ({ params }) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
-
+        loader: ({ params }) =>
+          fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`),
       },
       {
         path: "/all-instrutor",
@@ -97,13 +104,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "/wishlist",
-        element: <Wishlist></Wishlist>
+        element: <Wishlist></Wishlist>,
       },
       {
         path: "/instrctorDetails/:id",
         element: <TeacherDeatils />,
-        loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
-      }
+        loader: ({ params }) =>
+          fetch(
+            `https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`
+          ),
+      },
     ],
   },
   {
@@ -112,7 +122,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AdminDashboardHome/>
+        element: <AdminDashboardHome />,
       },
       {
         path: "/admin/add-students",
@@ -132,19 +142,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/add-parents",
-        element: <AddParents></AddParents>
+        element: <AddParents></AddParents>,
       },
       {
         path: "/admin/all-parents",
-        element: <AllParents></AllParents>
+        element: <AllParents></AllParents>,
       },
       {
         path: "/admin/add-books",
-        element: <AddBook></AddBook>
+        element: <AddBook></AddBook>,
       },
       {
         path: "/admin/all-books",
-        element: <AllBooks></AllBooks>
+        element: <AllBooks></AllBooks>,
       },
     ],
   },
