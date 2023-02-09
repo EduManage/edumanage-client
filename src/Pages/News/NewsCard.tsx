@@ -1,19 +1,18 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { FaFolderPlus, FaUser, FaWarehouse } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import UpdateNewsModal from '../../Components/updateNewsModal/UpdateNewsModal';
 
-type news = {
-    _id: number;
-    category: string;
-    title: string;
-    description: string;
-    author: string;
-    image: string;
-}
 const NewsCard = ({ news }: any) => {
     const { category, title, description, author, image, _id } = news
-
+    const { refetch, data: comments = [] } = useQuery({
+        queryKey: ['comment'],
+        queryFn: () =>
+            fetch(`https://edumanage-server.vercel.app/comment?id=${_id}`)
+                .then((res) => res.json(),
+                ),
+    })
     return (
         <div className='w-full mx-auto shadow-md border p-4 mb-8'>
             <img src={image} className=' w-full' alt="" />
@@ -28,7 +27,7 @@ const NewsCard = ({ news }: any) => {
                 </div>
                 <div className="flex justify-between items-center gap-2">
                     <FaWarehouse className='text-teal-500' />
-                    <span> comments </span>
+                    <span>{comments?.length} comments </span>
                 </div>
             </div>
             <h1 className=" text-3xl font-semibold mt-5">{title}</h1>

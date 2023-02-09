@@ -16,7 +16,7 @@ const AllNews = () => {
     })
     // delete news fuction
     const handleDelete = (id: any) => {
-        fetch(`http://localhost:5000/news/${id}`, {
+        fetch(`https://edu-manage-server.vercel.app/news/${id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json"

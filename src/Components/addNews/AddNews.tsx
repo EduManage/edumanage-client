@@ -39,7 +39,7 @@ const AddNews = () => {
           author,
           image: result.data.url
         }
-        fetch('http://localhost:5000/addNews', {
+        fetch('https://edu-manage-server.vercel.app/addNews', {
           method: 'POST',
           headers: {
             "content-type": "application/json"
