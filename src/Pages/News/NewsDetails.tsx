@@ -83,54 +83,33 @@ const NewsDetails = () => {
                     <p className="text-xl font-semibold">Share this post with your friends</p>
                     <div className="flex justify-between items-center gap-2">
 
-                <div className="flex justify-between items-center gap-2">
-                    <FaUser className='text-teal-500' />
-                    <span>{author}</span>
-                </div>
-                <div className="flex justify-between items-center gap-2">
-                    <FaWarehouse className='text-teal-500' />
-                    <span> comments </span>
-                </div>
-            </div>
-            <div className="flex justify-between items-center">
-                <h1 className=" text-3xl font-semibold mt-5">{title}</h1>
-                <label htmlFor="my-modal-3" className="cursor-pointer">  <MdEdit size={20}/></label>
-              
-            </div>
-            <p className='text-base mt-2'>{description}</p>
-            <div className="flex justify-start items-center mt-6 gap-8">
-                <p className="text-xl font-semibold">Share this post with your friends</p>
-                <div className="flex justify-between items-center gap-2">
-
-
-                        <FacebookShareButton
-                            url={shareUrl}
-                        >
-                            <FacebookIcon size={32} round />
-                        </FacebookShareButton>
-                        <TwitterShareButton
-                            url={shareUrl}
-                        >
-                            <TwitterIcon size={32} round />
-                        </TwitterShareButton>
+                        <div className="flex justify-between items-center gap-2">
+                            <FaUser className='text-teal-500' />
+                            <span>{author}</span>
+                        </div>
+                        <div className="flex justify-between items-center gap-2">
+                            <FaWarehouse className='text-teal-500' />
+                            <span> comments </span>
+                        </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                        <h1 className=" text-3xl font-semibold mt-5">{title}</h1>
+                        <label htmlFor="my-modal-3" className="cursor-pointer">  <MdEdit size={20} /></label>
 
                     </div>
+
                 </div>
+
+
                 <CommentForm handleCommentForm={handleCommentForm} />
                 {
                     comments.map((cmnt: any) => <CommentBox
                         comment={cmnt}
                     />)
                 }
+
             </div>
 
-            <CommentForm handleCommentForm={handleCommentForm} />
-            {
-                comments.map((cmnt: any) => <CommentBox
-                    comment={cmnt}
-                />)
-            }
-            <UpdateNewsModal news={news}/>
 
         </div>
     );

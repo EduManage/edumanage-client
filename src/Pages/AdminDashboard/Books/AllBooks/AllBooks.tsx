@@ -7,7 +7,6 @@ import { toast } from 'react-hot-toast';
 import Loader from '../../../../Shared/Loader/Loader';
 import DeleteModal from '../../../../SharedPage/DeleteModal/DeleteModal';
 import EditBooks from '../EditBooks/EditBooks';
-import { toast } from 'react-hot-toast';
 
 const AllBooks = () => {
     useTitle("All Books")
