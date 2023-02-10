@@ -1,25 +1,24 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 
 import Modal from "../../../Shared/Modal/Modal";
 
 const StudentSupport = () => {
-  //   const [studentData, setStudentSupport] = useState([]);
+  const [studentData, setStudentSupport] = useState([]);
   const [id, setId] = useState(null);
   console.log(id);
 
-  //   useEffect(() => {
-  //     fetch("http://localhost:5000/support")
-  //       .then((res) => res.json())
-  //       .then((data) => setStudentSupport(data));
-  //   }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/support")
+      .then((res) => res.json())
+      .then((data) => setStudentSupport(data));
+  }, []);
 
-  const { refetch, data: studentData = [] } = useQuery({
-    queryKey: ["studentData"],
-    queryFn: async () =>
-      await fetch("http://localhost:5000/support").then((res) => res.json()),
-  });
-  const refetchButton = refetch();
+  //   const { refetch, data: studentData = [] } = useQuery({
+  //     queryKey: ["studentData"],
+  //     queryFn: async () =>
+  //       await fetch("http://localhost:5000/support").then((res) => res.json()),
+  //   });
+
   console.log(studentData);
 
   return (
@@ -66,7 +65,7 @@ const StudentSupport = () => {
                 </a>
               </div>
             </div>
-            <Modal id={id} refetchButton={refetchButton} />
+            <Modal id={id} />
           </div>
         ))}
       </div>
