@@ -1,4 +1,4 @@
-const Modal = ({ id }) => {
+const Modal = ({ id, refetchButton }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,10 +20,13 @@ const Modal = ({ id }) => {
       },
       body: JSON.stringify(supportData),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        res.json();
+        refetchButton();
+        e.reset();
+      })
       .then((data) => {
         console.log(data);
-        e.reset();
       });
   };
   return (
@@ -73,7 +76,11 @@ const Modal = ({ id }) => {
             <option value="03:30pm - 04:00pm">03:30pm - 04:00pm</option>
           </select>
 
-          <input type="submit" className="modal-action btn btn-primary" />
+          <input
+            type="submit"
+            value="Submit"
+            className="modal-action btn btn-primary"
+          />
         </form>
       </div>
     </div>

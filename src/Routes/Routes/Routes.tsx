@@ -27,7 +27,7 @@ import Wishlist from "../../Shared/Wishlist/Wishlist";
 import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/AdminDashboardHome";
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
-import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport";
 
 export const router = createBrowserRouter([
   {
@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
         element: <News></News>
       },
       {
-        path: "/student-support",
+        path: "/admin/student-support",
         element: <StudentSupport />
       },
       {

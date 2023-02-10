@@ -114,7 +114,9 @@ const SupportSession = () => {
           </div>
         </form>
       </div>
+      <div className="mt-10">
       <ScheduleCard />
+      </div>
     </div>
   );
 };
