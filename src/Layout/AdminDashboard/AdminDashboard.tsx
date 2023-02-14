@@ -74,7 +74,7 @@ const AdminDashboard = () => {
                 <MenuItem component={<Link to="./students-details" />}>Students Details</MenuItem>
                 <MenuItem component={<Link to="./admission-form" />}>Admission Form</MenuItem>
                 <MenuItem component={<Link to="./add-students" />}>Add Students</MenuItem>
-                <MenuItem component={<Link to="./student-support" />}>Student Support</MenuItem>
+                <MenuItem component={<Link to="./student-support" />}>Student support</MenuItem>
           </SubMenu>
           
           <SubMenu

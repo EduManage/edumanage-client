@@ -13,12 +13,6 @@ const StudentSupport = () => {
       .then((data) => setStudentSupport(data));
   }, []);
 
-  //   const { refetch, data: studentData = [] } = useQuery({
-  //     queryKey: ["studentData"],
-  //     queryFn: async () =>
-  //       await fetch("http://localhost:5000/support").then((res) => res.json()),
-  //   });
-
   console.log(studentData);
 
   return (
