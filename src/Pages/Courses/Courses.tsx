@@ -11,13 +11,15 @@ const Courses = () => {
     //         .then(res => res.json())
     //         .then(data => setCoursess(data))
     // }, [])
+
+    // style={{ backgroundImage: `url('https://rainbowit.net/html/histudy/assets/images/bg/bg-image-10.jpg')` }}
     return (
-        <div>
-            {/* <div className=' pb-24 pt-36 text-center shadow-lg bg-no-repeat bg-top text-white font-poppins-em'
-                style={{ backgroundImage: `url(${homeBg})` }}>
+        <div className='bg-no-repeat bg-top bg-cover bg-gradient-to-r from-teal-300 to-blue-300 ' >
+            <div className=' pb-24 pt-36 text-center shadow-lg  text-black font-poppins-em '
+                >
                 <h1 className='text-4xl font-bold'>Our Courses</h1>
                 <p className='font-semibold'>Home - Courses</p>
-            </div> */}
+            </div>
             <div className='w-full flex justify-center items-center pt-20 font-poppins-em'>
                 <div className='w-3/4 flex '>
                     {/* left catagories bar start  */}

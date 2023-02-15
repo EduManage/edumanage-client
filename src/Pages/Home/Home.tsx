@@ -14,6 +14,7 @@ import wave2 from "../../Assets/wave-2.svg";
 import "./Home.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { Link } from 'react-router-dom';
 
 
 
@@ -41,7 +42,7 @@ const Home = () => {
                             <p>Being a student is easy. Learning requires actual work.</p>
                             <p>The great aim of education is not knowledge but action.</p>
                         </div>
-                        <button className="bg-gradient-to-r  from-teal-300 to-blue-300 mt-5 px-8 py-2 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded-2xl text-xs text-white  font-medium hover:shadow-xl ease-in-out duration-300">
+                        <button className="bg-gradient-to-r from-teal-300 to-blue-300 mt-5 px-8 py-2 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded-2xl text-xs text-white  font-medium hover:shadow-xl ease-in-out duration-300">
                             EXPLORE
                         </button>
                     </div>
