@@ -28,6 +28,9 @@ import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/Ad
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
+import Dashboard from "../../Layout/Dashboard/Dashboard";
+import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 
 export const router = createBrowserRouter([
   {
@@ -107,12 +110,20 @@ export const router = createBrowserRouter([
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
       },
       {
-        path : 'addNews',
-        element : <AddNews/>
+        path: 'addNews',
+        element: <AddNews />
       },
       {
-        path : 'allNews',
-        element : <AllNews/>
+        path: 'allNews',
+        element: <AllNews />
+      },
+      {
+        path: "spCourses",
+        element: <SpecialCourses />
+      },
+      {
+        path : 'myCourses',
+        element : <MyCourses/>
       }
     ],
   },
@@ -122,7 +133,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AdminDashboardHome/>
+        element: <AdminDashboardHome />
       },
       {
         path: "/admin/add-students",
