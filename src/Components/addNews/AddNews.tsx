@@ -60,10 +60,10 @@ const AddNews = () => {
       })
   }
   return (
-    <div className='py-20 font-poppins-em'>
+    <div className='pb-20 font-poppins-em'>
       <div
         style={{ background: `linear-gradient(to right, rgba(0, 128, 128, 0.7), rgba(0, 128, 250, 0.7)), url(${add})`, }}
-        className="bg-no-repeat pt-20 pb-10  bg-teal-400 text-center h-72 img-gradient flex justify-center items-center"
+        className="bg-no-repeat pt-10 pb-10  bg-teal-400 text-center h-48 img-gradient flex justify-center items-center"
       >
         <h1 className="text-4xl text-white ">Add News</h1>
       </div>

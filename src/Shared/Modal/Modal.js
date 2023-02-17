@@ -1,3 +1,5 @@
+import { toast } from "react-hot-toast";
+
 const Modal = ({ id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,9 +24,11 @@ const Modal = ({ id }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (data.acknowledged === true) { toast.success("Successfully message sent!"); }
         console.log(data);
-        e.reset();
+        
       });
+      e.reset();
   };
   return (
     <div className="modal" id="my-modal-2">

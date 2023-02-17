@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import blob from '../../Assets/blobHeaderShape.png';
 import headerImg from '../../Assets/homepagePicture.png';
 import book from '../../Assets/book1.png';
@@ -10,16 +10,21 @@ import JoinToday from '../../Components/joinToday/joinToday';
 import HeroSec1 from '../../Components/HeroSec1/HeroSec1';
 import HeroSec2 from '../../Components/HeroSec2/HeroSec2';
 import wave1 from "../../Assets/waveOpacity-8.svg";
-import wave2 from "../../Assets/wave-2.svg";
 import "./Home.css";
-import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { Link } from 'react-router-dom';
+// import LoadingBar from 'react-top-loading-bar'
 
 
 
 const Home = () => {
+
+
     return (
         <div className="">
+            {/* <div>
+                <LoadingBar color="#f11946" progress={progress} onLoaderFinished={() => setProgress(0)} />
+            </div> */}
             {/* Header section start  */}
 
             <div
@@ -41,15 +46,17 @@ const Home = () => {
                             <p>Being a student is easy. Learning requires actual work.</p>
                             <p>The great aim of education is not knowledge but action.</p>
                         </div>
-                        <button className="bg-gradient-to-r  from-teal-300 to-blue-300 mt-5 px-8 py-2 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded-2xl text-xs text-white  font-medium hover:shadow-xl ease-in-out duration-300">
-                            EXPLORE
-                        </button>
+                        <Link to='courses'>
+                            <button className="bg-gradient-to-r from-teal-300 to-blue-300 mt-5 px-8 py-2 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded-2xl text-xs text-white  font-medium hover:shadow-xl ease-in-out duration-300">
+                                EXPLORE
+                            </button>
+                        </Link>
                     </div>
                     <div className="w-full md:w-3/5">
                         <img className="px-5" src={headerImg} alt="" />
                     </div>
                 </div>
-                
+
             </div>
             {/* Header section end  */}
 

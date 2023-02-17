@@ -28,8 +28,15 @@ import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/Ad
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+
 import Careers from "../../Pages/CareersArea/Careers";
 import JobCareers from "../../Pages/CareersArea/JobCareers";
+
+import InstructorDashboardLayout from "../../Layout/IntructorDashboard/InstructorDashboardLayout";
+import InstructorDashboard from "../../Layout/IntructorDashboard/InstructorDashboard";
+import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
+import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
+import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 
 export const router = createBrowserRouter([
   {
@@ -104,8 +111,8 @@ export const router = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <SingleCourse />,
-        loader: ({ params }) =>
-          fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+
       },
       {
         path: "/all-instrutor",
@@ -123,7 +130,13 @@ export const router = createBrowserRouter([
             `https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`
           ),
       },
+      
+      // {
+      //   path: "/instructordashboard",
+      //   element: <InstructorDashboard />
+      // },
       {
+
         path: "addNews",
         element: <AddNews />,
       },
@@ -131,6 +144,15 @@ export const router = createBrowserRouter([
         path: "allNews",
         element: <AllNews />,
       },
+
+        path: "/spCourses",
+        element: <SpecialCourses />
+      },
+      {
+        path : 'myCourses',
+        element : <MyCourses/>
+      }
+
     ],
   },
   {
@@ -139,7 +161,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AdminDashboardHome />,
+        element: <AdminDashboardHome />
+
       },
       {
         path: "/admin/add-students",
@@ -173,6 +196,32 @@ export const router = createBrowserRouter([
         path: "/admin/all-books",
         element: <AllBooks></AllBooks>,
       },
+      {
+        path: '/admin/addNews',
+        element: <AddNews />
+      },
+      {
+        path: '/admin/allNews',
+        element: <AllNews />
+      },
+    ],
+  },
+  {
+    path: "/instructordashboard",
+    element: <InstructorDashboardLayout />,
+    children: [
+      {
+        path: "/instructordashboard",
+        element: <InstructorDashboard/>,
+      },
+      {
+        path: "/instructordashboard/addcourses",
+        element: <AddCourses/>,
+      },
+      {
+
+      }
+
     ],
   },
 ]);

@@ -7,10 +7,36 @@ import { BiBookContent } from "react-icons/bi";
 import { TbLanguage } from "react-icons/tb";
 import sharing from '../../../Assets/sharing.png'
 import { toast } from 'react-hot-toast';
+import { BsCheckLg } from 'react-icons/bs';
 
 const SingleCourse = () => {
     const courseDetails: any = useLoaderData();
-    const { price, category, title, rating, reviews, Authorimg, Author, persons, picture, details, totallecture, duiration, articles, downloadbleitem, asssignment, language, _id } = courseDetails;
+    const { price,
+        lectures,
+        time,
+        skillLevel,
+        language,
+        previewLink,
+        title,
+        titleDetails,
+        categories,
+        w1,
+        w2,
+        w3,
+        w4,
+        w5,
+        w6,
+        w7,
+        w8,
+        r1,
+        r2,
+        r3,
+        r4,
+        picture,
+        authorName,
+        authorImage,
+        _id,
+        rating } = courseDetails;
     console.log(courseDetails)
 
     const [isClicked, setIsClicked] = useState(false);
@@ -23,14 +49,14 @@ const SingleCourse = () => {
         // const ttl = title;
         const info = {
             _id,
-            category,
+            categories,
             price,
             title,
             picture
         }
 
 
-        fetch(`https://recyclelib-server.vercel.app/wishlist`, {
+        fetch(`http://localhost:5000/wishlist`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,26 +86,26 @@ const SingleCourse = () => {
                     {/* content section start  */}
                     <div className='w-2/3 '>
                         <div className=''>
-                            <div className='w-1/3'>
-                                <h1 className='bg-rose-500 py-1 text-center px-2 text-white text-xs font-medium rounded-lg'>{category}</h1>
-                            </div>
-                            <h1 className='font-semibold pt-2 text-3xl'>{title}</h1>
-                            <div className='flex items-center justify-between'>
-                                <div className='flex items-center text-xs gap-2 py-5'>
+                            <p className='font-semibold text-sm text-black/40 mb-5 mt-16'>Home - {categories}</p>
+                            
+                            <h1 className='font-semibold pt-2 text-3xl mb-5'>{title}</h1>
+                            <p className='mt-1  text-sm mb-5'>{titleDetails}</p>
+                            <div className='flex items-start justify-between'>
+                                <div className='flex items-center text-xs gap-2 pb-10'>
                                     <img
                                         className="w-8 rounded-full "
-                                        src={Authorimg}
+                                        src={authorImage}
                                         alt=""
                                     />
                                     <h1 className='text-sm '>by </h1>
-                                    <h1 className="font-semibold text-sm text-rose-500">{Author} </h1>
+                                    <h1 className="font-semibold text-sm text-rose-500">{authorName} </h1>
                                     <div className='flex items-center'>
                                         <h1>{rating}</h1>
                                         <AiFillStar className='text-orange-500 ml-1 ' />
                                     </div>
-                                    <h1>({reviews} Review)</h1>
+                                    {/* <h1>({reviews} Review)</h1> */}
                                     <MdOutlinePersonOutline />
-                                    <h1 className='text-xs '>{persons}</h1>
+                                    {/* <h1 className='text-xs '>{persons}</h1> */}
                                 </div>
                                 <div>
                                     <button onClick={handleClick} className={`flex items-center gap-2 text-sm`}>
@@ -94,17 +120,78 @@ const SingleCourse = () => {
                         </div>
                         <div className='w-full'>
                             <img className='w-full' src={picture} alt="" />
-                            <p className='mt-5 border p-5 text-sm'>{details}</p>
+
+                            {/* what you wil learn section */}
+                            <h1 className='text-2xl font-semibold p-5'>What you will learn in</h1>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w1}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w2}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w3}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w4}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w5}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w6}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w7}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{w8}</p>
+                            </div>
+
+
+
+
+
+
+                            <h1 className='text-2xl font-semibold p-5'>Requirements</h1>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{r1}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{r2}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{r3}</p>
+                            </div>
+                            <div className='flex gap-2 items-start mb-2'>
+                                <BsCheckLg className='text-green-500' />
+                                <p className=''>{r4}</p>
+                            </div>
+
+
+
                             <img src={sharing} className='my-10 w-1/2' alt="" />
+
                         </div>
                     </div>
                     {/* content section end  */}
 
                     {/* Right catagories bar start  */}
-                    <div className='w-1/3'>
+                    <div className='w-1/3 fixed right-5 bg-white p-3 rounded-lg'>
                         <div className='flex items-center justify-center pt-20 gap-5'>
-                            <h1 className='text-sm'>Price : </h1>
-                            <h1 className='text-teal-600 text-2xl font-semibold'>{price}</h1>
+                            <h1 className='text-sm'>Price :</h1>
+                            <h1 className='text-teal-600 text-2xl font-semibold'>${price}</h1>
                         </div>
                         <div className='flex flex-col text-sm p-8 text-black/80 font-medium'>
 
@@ -114,7 +201,7 @@ const SingleCourse = () => {
                                     <h1>Total lecture</h1>
                                 </div>
 
-                                <h1>{totallecture}</h1>
+                                <h1>{lectures}</h1>
                             </div>
                             <div className='flex items-center justify-between mb-2 '>
                                 <div className='flex items-center'>
@@ -122,31 +209,24 @@ const SingleCourse = () => {
                                     <h1>Duration</h1>
                                 </div>
 
-                                <h1>{duiration}</h1>
+                                <h1>10h 30m</h1>
                             </div>
-                            <div className='flex items-center justify-between mb-2'>
-                                <div className='flex items-center'>
-                                    <MdArticle className='w-8 text-teal-600' />
-                                    <h1>Articles</h1>
-                                </div>
 
-                                <h1>{articles}</h1>
-                            </div>
-                            <div className='flex items-center justify-between mb-2'>
+                            {/* <div className='flex items-center justify-between mb-2'>
                                 <div className='flex items-center'>
                                     <MdDownload className='w-8 text-teal-600' />
                                     <h1>Downloadable item</h1>
                                 </div>
 
                                 <h1>{downloadbleitem}</h1>
-                            </div>
+                            </div> */}
                             <div className='flex items-center justify-between mb-2'>
                                 <div className='flex items-center'>
                                     <MdOutlineAssignment className='w-8 text-teal-600' />
                                     <h1>Assignment</h1>
                                 </div>
 
-                                <h1>{asssignment}</h1>
+                                <h1>15</h1>
                             </div>
                             <div className='flex items-center justify-between mb-2'>
                                 <div className='flex items-center'>

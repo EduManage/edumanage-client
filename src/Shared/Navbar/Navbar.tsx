@@ -28,10 +28,9 @@ const Navbar = () => {
   };
   useEffect(() => {
     changeBackground();
-    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
-  // window.addEventListener('scroll', changeBackground);
+  
   return (
     <div
       className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-3 ease-in-out duration-300 font-poppins-em fixed ${
@@ -50,29 +49,29 @@ const Navbar = () => {
       {/* route names start  */}
       <div
         className={`w-full flex absolute md:static bg-white md:bg-transparent duration-300 py-2 md:py-0 ease-in flex-col md:flex-row justify-start text-center md:w-3/6 text-xs gap-5 font-medium ${
-          open ? "top-[-250px]" : "top-20 "
+          open ? "top-[-250px]" : "top-24 "
         }`}
       >
         <div className="hover-underline-animation">
           <Link to="/">HOME</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/about">ABOUT</Link>
-        </div>
-        <div className="hover-underline-animation">
           <Link to="/courses">COURSE</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/support-session">SUPPORT</Link>
+          <Link to="/support-session">SCHEDULE</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/all-instrutor">INSTRUCTOR</Link>
+          <Link to="/instructordashboard">DASHBOARD</Link>
         </div>
         <div className="hover-underline-animation">
           <Link to="/news">NEWS</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/student-support">Student Support</Link>
+          <Link to="/student-support">STUDENT SUPPORT</Link>
+        </div>
+        <div className="hover-underline-animation">
+          <Link to="/spCourses">SPECIAL</Link>
         </div>
       </div>
       {/* route names end  */}
@@ -88,7 +87,7 @@ const Navbar = () => {
               <Link to="/admin" className="">
                 <div className="avatar online ">
                   <div className="w-8 rounded-full">
-                    <img src={user?.photoURL} alt="" />
+                    <img src={user?.photoURL ? user?.photoURL :'https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI='} alt="" />
                   </div>
                 </div>
               </Link>
