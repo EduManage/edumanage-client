@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 interface IFormInput {
   email: string;
@@ -32,9 +33,7 @@ const Footer = () => {
             <div className="mb-5">
               <h4 className="text-2xl">Important Link</h4>
               <ul>
-                <li className="hover:text-violet-400 hover:font-bold">
-                  Home
-                </li>
+                <li className="hover:text-violet-400 hover:font-bold">Home</li>
                 <li className="hover:text-violet-400 hover:font-bold">
                   Student
                 </li>
@@ -45,7 +44,7 @@ const Footer = () => {
                   Contract Us
                 </li>
                 <li className="hover:text-violet-400 hover:font-bold">
-                  Sign In
+                  <Link to={"/careers"}>Careers</Link>
                 </li>
               </ul>
             </div>
@@ -97,7 +96,6 @@ const Footer = () => {
               </form>
             </div>
           </div>
-
         </div>
         <div className="text-center py-5 bg-gray-800 text-gray-200"></div>
       </div>
