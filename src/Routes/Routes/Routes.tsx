@@ -31,6 +31,8 @@ import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSup
 import InstructorDashboardLayout from "../../Layout/IntructorDashboard/InstructorDashboardLayout";
 import InstructorDashboard from "../../Layout/IntructorDashboard/InstructorDashboard";
 import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
+import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
+import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 
 export const router = createBrowserRouter([
   {
@@ -121,6 +123,14 @@ export const router = createBrowserRouter([
       //   path: "/instructordashboard",
       //   element: <InstructorDashboard />
       // },
+      {
+        path: "spCourses",
+        element: <SpecialCourses />
+      },
+      {
+        path : 'myCourses',
+        element : <MyCourses/>
+      }
     ],
   },
   {
