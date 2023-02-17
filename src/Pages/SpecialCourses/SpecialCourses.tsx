@@ -9,12 +9,20 @@ import { title,reveiwData,responsive} from './courseData'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ReveiwCard from './ReveiwCard'
+import { toast } from 'react-hot-toast'
 
 const SpecialCourses = () => {
     const [showAll, setShowAll] = useState(false);
+    const [disabled, setDisabled] = useState(false);
 
     const handleLoadAll = () => {
         setShowAll(!showAll)
+    }
+
+    const handleCourse = () =>{
+        setDisabled(true)
+        toast.success('added to cart')
+
     }
 
     const review = reveiwData.map( data => <ReveiwCard key={data.id} data={data}/>)
@@ -26,7 +34,7 @@ const SpecialCourses = () => {
                         <h1 className="text-3xl  font-semibold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 mb-2">Psychology training for all</h1>
                         <p className='mt-2 text-gray-500'>This training course is designed to introduce participants to the fundamentals of cognitive-behavioral therapy, a widely used evidence-based psychotherapy approach.</p>
                     </div>
-                    <h2 className="text-2xl mt-10 font-semibold  mb-2">What's included in full syllabus?</h2>
+                    <h2 className="text-2xl mt-10 font-semibold  mb-2">What's this course?</h2>
                     <div className="mt-1 border-2 rounded-md flex gap-5 flex-wrap p-8 text-gray-500 text-sm">
                         <div className='flex justify-between items-start gap-2'>
                             <BsCheckLg className='text-green-500' />
@@ -145,7 +153,7 @@ const SpecialCourses = () => {
                 <div className='w-5/12 bg-gradient-to-br from-blue-100 to-purple-200 rounded-md mx-auto overflow-hidden sticky top-20'>
                     <iframe className='w-full h-56' src="https://www.youtube.com/embed/v1eSPtqauCw" title="YouTube video player" allow="accelerometer; autoplay" allowFullScreen></iframe>
                     <div className='mt-6 p-2'>
-                        <p className="text-3xl font-semibold">$150/ <span className='text-sm'>full course access</span></p>
+                        <p className="text-3xl font-semibold">FREE/ <span className='text-sm'>full course access</span></p>
 
                     </div>
                     <div className='mt-6 text-gray-500 p-4 space-y-1'>
@@ -174,8 +182,13 @@ const SpecialCourses = () => {
                             <p>1280 high learnling quiz section</p>
                         </div>
                     </div>
-                    <button className="my-6 bg-gradient-to-r  from-teal-300 to-blue-300 px-8 py-4 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded text-xs hover:shadow-xl ease-in-out duration-300 w-full ">
-                        Buy Now
+                    <button 
+                    onClick={handleCourse}
+                            disabled={disabled}
+                    className="my-6 bg-gradient-to-r  from-teal-300 to-blue-300 px-8 py-4 shadow-teal-300/30 hover:shadow-teal-300/30 shadow-lg rounded  hover:shadow-xl ease-in-out duration-300 w-full ">
+                     {
+                        disabled ? 'Added to cart' : 'Add to cart'
+                     }
                     </button>
                 </div>
             </div>
