@@ -15,9 +15,9 @@ const StudentSupport = () => {
   console.log(studentData);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 pt-20">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-20 py-28">
       {studentData.map((data) => (
-        <div key={data._id} className="card w-96 bg-base-100 shadow-xl">
+        <div key={data._id} className="card   shadow-xl bg-gray-200">
           <div className="card-body">
             <h2 className="card-title"> {data.meetingCategory}</h2>
             <p>Date: {data.date}</p>

@@ -45,7 +45,7 @@ const MainCourses = () => {
                 courses?.map((course: course, i) => <div key={i}>
 
 
-                    <div className='flex w-full my-5 gap-5 shadow-md hover:shadow-lg ease-in-out duration-300 font-poppins-em'>
+                    <div className='flex w-full my-5 gap-5 shadow-md hover:shadow-lg ease-in-out duration-300 font-poppins-em mx-5  hover:mx-0'>
                         <div className='w-2/5'>
                             <img src={course.picture} alt="" />
                         </div>

@@ -28,8 +28,10 @@ import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/Ad
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+import InstructorDashboardLayout from "../../Layout/IntructorDashboard/InstructorDashboardLayout";
+import InstructorDashboard from "../../Layout/IntructorDashboard/InstructorDashboard";
+import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
 import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
-import Dashboard from "../../Layout/Dashboard/Dashboard";
 import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 
 export const router = createBrowserRouter([
@@ -117,6 +119,10 @@ export const router = createBrowserRouter([
         path: 'allNews',
         element: <AllNews />
       },
+      // {
+      //   path: "/instructordashboard",
+      //   element: <InstructorDashboard />
+      // },
       {
         path: "spCourses",
         element: <SpecialCourses />
@@ -167,6 +173,24 @@ export const router = createBrowserRouter([
         path: "/admin/all-books",
         element: <AllBooks></AllBooks>
       },
+    ],
+  },
+  {
+    path: "/instructordashboard",
+    element: <InstructorDashboardLayout />,
+    children: [
+      {
+        path: "/instructordashboard",
+        element: <InstructorDashboard/>,
+      },
+      {
+        path: "/instructordashboard/addcourses",
+        element: <AddCourses/>,
+      },
+      {
+
+      }
+
     ],
   },
 ]);

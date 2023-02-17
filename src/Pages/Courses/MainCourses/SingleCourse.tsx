@@ -94,8 +94,14 @@ const SingleCourse = () => {
                         </div>
                         <div className='w-full'>
                             <img className='w-full' src={picture} alt="" />
-                            <p className='mt-5 border p-5 text-sm'>{details}</p>
+                            <h1 className='text-2xl font-semibold p-5'>What you will learn in</h1>
+                            <p className='mt-1 border p-5 text-sm'>{details}</p>
+                            <h1 className='text-2xl font-semibold p-5'>Requirements</h1>
+                            <ul>
+                                <li>No programming experience needed - I'll teach you everything you need to know</li>
+                            </ul>
                             <img src={sharing} className='my-10 w-1/2' alt="" />
+                            
                         </div>
                     </div>
                     {/* content section end  */}
