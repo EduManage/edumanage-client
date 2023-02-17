@@ -23,13 +23,16 @@ const AllInstructor = () => {
   }, []);
   const handleInstructor = (tata: any) => {
     const instructorID = tata.id;
-    fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(instructorID),
-    })
+    fetch(
+      `https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(instructorID),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -37,9 +40,10 @@ const AllInstructor = () => {
         }
       });
   };
-  if(instructor.length===0){
-    return <Loader></Loader>
+  if (instructor.length === 0) {
+    return <Loader></Loader>;
   }
+  console.log(instructor);
   return (
     <div className="flex justify-center py-24 ">
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-3/4">
@@ -64,7 +68,6 @@ const AllInstructor = () => {
                     </samp>{" "}
                     {ins.titleBack ? ins.titleBack : "hemm"}
                   </h3>
-                  
                 </div>
               </Link>
             </div>
