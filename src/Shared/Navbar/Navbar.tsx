@@ -28,10 +28,9 @@ const Navbar = () => {
   };
   useEffect(() => {
     changeBackground();
-    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
-  // window.addEventListener('scroll', changeBackground);
+  
   return (
     <div
       className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-3 ease-in-out duration-300 font-poppins-em fixed ${
@@ -57,22 +56,19 @@ const Navbar = () => {
           <Link to="/">HOME</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/about">ABOUT</Link>
-        </div>
-        <div className="hover-underline-animation">
           <Link to="/courses">COURSE</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/support-session">SUPPORT</Link>
+          <Link to="/support-session">SCHEDULE</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/all-instrutor">INSTRUCTOR</Link>
+          <Link to="/instructordashboard">DASHBOARD</Link>
         </div>
         <div className="hover-underline-animation">
           <Link to="/news">NEWS</Link>
         </div>
         <div className="hover-underline-animation">
-          <Link to="/student-support">Student Support</Link>
+          <Link to="/student-support">STUDENT SUPPORT</Link>
         </div>
       </div>
       {/* route names end  */}

@@ -2,8 +2,6 @@ import React from 'react';
 import LeftCatagoriesOfCourses from './LeftCatagoriesOfCourses/LeftCatagoriesOfCourses';
 import { BsFillGrid3X3GapFill, BsChevronDown } from "react-icons/bs";
 import MainCourses from './MainCourses/MainCourses';
-
-import homeBg from '../../Assets/homebg.png'
 const Courses = () => {
     // const [courses, setCoursess] = useFormState([])
     // useEffect(() => {
@@ -14,7 +12,7 @@ const Courses = () => {
 
     // style={{ backgroundImage: `url('https://rainbowit.net/html/histudy/assets/images/bg/bg-image-10.jpg')` }}
     return (
-        <div className='bg-no-repeat bg-top bg-cover bg-gradient-to-r from-teal-300 to-blue-300 ' >
+        <div className='bg-no-repeat  ' >
             <div className=' pb-24 pt-36 text-center shadow-lg  text-black font-poppins-em '
                 >
                 <h1 className='text-4xl font-bold'>Our Courses</h1>

@@ -28,6 +28,9 @@ import AdminDashboardHome from "../../Pages/AdminDashboard/AdminDashboardHome/Ad
 
 import SupportSession from "../../Pages/SupportSession/SupportSession";
 import StudentSupport from "../../Pages/AdminDashboard/StudentSupport/StudentSupport.js";
+import InstructorDashboardLayout from "../../Layout/IntructorDashboard/InstructorDashboardLayout";
+import InstructorDashboard from "../../Layout/IntructorDashboard/InstructorDashboard";
+import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
 
 export const router = createBrowserRouter([
   {
@@ -107,13 +110,17 @@ export const router = createBrowserRouter([
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
       },
       {
-        path : 'addNews',
-        element : <AddNews/>
+        path: 'addNews',
+        element: <AddNews />
       },
       {
-        path : 'allNews',
-        element : <AllNews/>
-      }
+        path: 'allNews',
+        element: <AllNews />
+      },
+      // {
+      //   path: "/instructordashboard",
+      //   element: <InstructorDashboard />
+      // },
     ],
   },
   {
@@ -122,7 +129,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AdminDashboardHome/>
+        element: <AdminDashboardHome />
       },
       {
         path: "/admin/add-students",
@@ -156,6 +163,24 @@ export const router = createBrowserRouter([
         path: "/admin/all-books",
         element: <AllBooks></AllBooks>
       },
+    ],
+  },
+  {
+    path: "/instructordashboard",
+    element: <InstructorDashboardLayout />,
+    children: [
+      {
+        path: "/instructordashboard",
+        element: <InstructorDashboard/>,
+      },
+      {
+        path: "/instructordashboard/addcourses",
+        element: <AddCourses/>,
+      },
+      {
+
+      }
+
     ],
   },
 ]);
