@@ -101,8 +101,8 @@ const AdminDashboard = () => {
               label="News"
               icon={<FaReadme />}
             >
-              <MenuItem component={<Link to="/allNews" />}>All News</MenuItem>
-              <MenuItem component={<Link to="/addNews" />}>Add News</MenuItem>
+              <MenuItem component={<Link to="./allNews" />}>All News</MenuItem>
+              <MenuItem component={<Link to="./addNews" />}>Add News</MenuItem>
             </SubMenu>
 
 

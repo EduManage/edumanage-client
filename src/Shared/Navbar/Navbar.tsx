@@ -70,6 +70,9 @@ const Navbar = () => {
         <div className="hover-underline-animation">
           <Link to="/student-support">STUDENT SUPPORT</Link>
         </div>
+        <div className="hover-underline-animation">
+          <Link to="/spCourses">SPECIAL</Link>
+        </div>
       </div>
       {/* route names end  */}
 
@@ -84,7 +87,7 @@ const Navbar = () => {
               <Link to="/admin" className="">
                 <div className="avatar online ">
                   <div className="w-8 rounded-full">
-                    <img src={user?.photoURL} alt="" />
+                    <img src={user?.photoURL ? user?.photoURL :'https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI='} alt="" />
                   </div>
                 </div>
               </Link>

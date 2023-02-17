@@ -95,7 +95,7 @@ export const router = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <SingleCourse />,
-        loader: ({ params }) => fetch(`https://recyclelib-server.vercel.app/courses/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
 
       },
       {
@@ -111,20 +111,13 @@ export const router = createBrowserRouter([
         element: <TeacherDeatils />,
         loader: ({ params }) => fetch(`https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`)
       },
-      {
-        path: 'addNews',
-        element: <AddNews />
-      },
-      {
-        path: 'allNews',
-        element: <AllNews />
-      },
+      
       // {
       //   path: "/instructordashboard",
       //   element: <InstructorDashboard />
       // },
       {
-        path: "spCourses",
+        path: "/spCourses",
         element: <SpecialCourses />
       },
       {
@@ -172,6 +165,14 @@ export const router = createBrowserRouter([
       {
         path: "/admin/all-books",
         element: <AllBooks></AllBooks>
+      },
+      {
+        path: '/admin/addNews',
+        element: <AddNews />
+      },
+      {
+        path: '/admin/allNews',
+        element: <AllNews />
       },
     ],
   },

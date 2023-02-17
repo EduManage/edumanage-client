@@ -12,7 +12,7 @@ const InstructorDashboardLayout = () => {
     return (
         <div>
             <Navbar />
-            <div className='pt-20 '>
+            <div className='pt-20 font-poppins-em'>
                 <div className='h-72 bg-gradient-to-b from-white via-indigo-200 to-indigo-400 '>
 
                 </div>
