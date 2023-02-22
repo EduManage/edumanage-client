@@ -58,7 +58,7 @@ const JobCareers = () => {
         <Link to={"/careers"}>
           <button
             onClick={() => handleClick(1)}
-            className="btn glass btn-wide mt-2"
+            className="btn black text-white btn-wide mt-2"
           >
             I'm Interested
           </button>

@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
         path: "/jobdetails/:id",
         element: <JobCareers />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/jobdetails/${params.id}`),
+          fetch(`https://edumanage-server-bice.vercel.app/jobdetails/${params.id}`),
       },
       {
         path: "/all-instrutor",
@@ -111,7 +111,7 @@ export const router = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <SingleCourse />,
-        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+        loader: ({ params }) => fetch(`https://edumanage-server-ivory.vercel.app/courses/${params.id}`)
 
       },
       {
@@ -130,7 +130,7 @@ export const router = createBrowserRouter([
             `https://doctors-portal-server-gray-alpha.vercel.app/instructorDetails/${params.id}`
           ),
       },
-      
+
       // {
       //   path: "/instructordashboard",
       //   element: <InstructorDashboard />
@@ -144,13 +144,13 @@ export const router = createBrowserRouter([
         path: "allNews",
         element: <AllNews />,
       },
-
+      {
         path: "/spCourses",
         element: <SpecialCourses />
       },
       {
-        path : 'myCourses',
-        element : <MyCourses/>
+        path: 'myCourses',
+        element: <MyCourses />
       }
 
     ],
@@ -212,11 +212,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/instructordashboard",
-        element: <InstructorDashboard/>,
+        element: <InstructorDashboard />,
       },
       {
         path: "/instructordashboard/addcourses",
-        element: <AddCourses/>,
+        element: <AddCourses />,
       },
       {
 

@@ -56,7 +56,7 @@ const SingleCourse = () => {
         }
 
 
-        fetch(`http://localhost:5000/wishlist`, {
+        fetch(`https://edumanage-server-ivory.vercel.app/wishlist`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

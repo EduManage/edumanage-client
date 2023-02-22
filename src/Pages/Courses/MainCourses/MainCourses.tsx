@@ -31,7 +31,7 @@ const MainCourses = () => {
 
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/courses`)
+        fetch(`https://edumanage-server-ivory.vercel.app/courses`)
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])

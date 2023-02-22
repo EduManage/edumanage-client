@@ -7,12 +7,12 @@ const Careers = () => {
   const { data: careers = [] } = useQuery({
     queryKey: ["careers"],
     queryFn: () =>
-      fetch("http://localhost:5000/careers").then((res) => res.json()),
+      fetch("https://edumanage-server-bice.vercel.app/careers").then((res) => res.json()),
   });
   const handleClick = (data: any) => {
     const jobId = data;
     // console.log(jobId);
-    fetch(`http://localhost:5000/jobdetails/${jobId}`)
+    fetch(`https://edumanage-server-bice.vercel.app/jobdetails/${jobId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -25,17 +25,20 @@ const Careers = () => {
       <h1 className="text-3xl font-bold text-center">Current Job Openings</h1>
       <div>
         <div>
-          <ul className="text-center">
+          <ul className="text-center mt-5 ">
             {careers.map((jov: any) => (
-              <Link to={`/jobdetails/${jov._id}`}>
-                <li
-                  className="text-xl py-2"
-                  key={jov._id}
-                  onClick={() => handleClick(jov._id)}
-                >
-                  {jov.name}: {jov.jovname}
-                </li>
-              </Link>
+              <div className='border border-black my-1'>
+                <Link to={`/jobdetails/${jov._id}`} >
+                  <li
+                    className="text-xl py-1"
+                    key={jov._id}
+                    onClick={() => handleClick(jov._id)}
+                  >
+                    {jov.name}: {jov.jovname}
+                  </li>
+                </Link>
+              </div>
+
             ))}
           </ul>
         </div>

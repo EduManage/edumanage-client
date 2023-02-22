@@ -19,7 +19,7 @@ const Wishlist = () => {
 
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/wishlist`)
+        fetch(`https://edumanage-server-ivory.vercel.app/wishlist`)
             .then(res => res.json())
             .then(data => setWishlist(data))
     }, [])
