@@ -33,26 +33,25 @@ const Navbar = () => {
   });
 
   // Dark mode
-  useEffect(()=>{
-    if(theme === 'light'){
+  useEffect(() => {
+    if (theme === 'light') {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'light')
-    } else{
+    } else {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'dark')
     }
-  },[theme])
+  }, [theme])
 
-  const handleThemeSwitch = () =>{
-    setTheme(theme=== "dark" ? "light": "dark")
-    
+  const handleThemeSwitch = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+
   }
-  
+
   return (
     <div
-      className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-3 ease-in-out duration-300 font-poppins-em fixed ${
-        navColorChange ? "bg-white shadow-lg" : "bg-white md:bg-transparent"
-      } `}
+      className={`flex items-center z-50 w-full pt-5 pb-3 md:pb-3 ease-in-out duration-300 font-poppins-em fixed ${navColorChange ? "bg-white shadow-lg" : "bg-white md:bg-transparent"
+        } `}
     >
       {/* logo and name section on navbar start */}
       <div className="w-1/3 flex justify-center md:w-1/6">
@@ -65,9 +64,8 @@ const Navbar = () => {
 
       {/* route names start  */}
       <div
-        className={`w-full flex absolute md:static bg-white md:bg-transparent duration-300 py-2 md:py-0 ease-in flex-col md:flex-row justify-start text-center md:w-3/6 text-xs gap-5 font-medium ${
-          open ? "top-[-250px]" : "top-24 "
-        }`}
+        className={`w-full flex absolute md:static bg-white md:bg-transparent duration-300 py-2 md:py-0 ease-in flex-col md:flex-row justify-start text-center md:w-3/6 text-xs gap-5 font-medium ${open ? "top-[-250px]" : "top-24 "
+          }`}
       >
         <div className="hover-underline-animation">
           <Link to="/">HOME</Link>
@@ -95,9 +93,8 @@ const Navbar = () => {
 
       {/* auth section start */}
       <div className="text-xs w-2/3 md:w-1/6 flex justify-end items-center gap-2 font-medium">
-      <button className="btn btn-sm"
-      onClick={handleThemeSwitch}
-      >Dark</button>
+
+
 
         {user?.email ? (
           <div className="flex items-center gap-2">
@@ -108,7 +105,7 @@ const Navbar = () => {
               <Link to="/admin" className="">
                 <div className="avatar online ">
                   <div className="w-8 rounded-full">
-                    <img src={user?.photoURL ? user?.photoURL :'https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI='} alt="" />
+                    <img src={user?.photoURL ? user?.photoURL : 'https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI='} alt="" />
                   </div>
                 </div>
               </Link>
@@ -182,11 +179,22 @@ const Navbar = () => {
 
       {/* social icon start  */}
       <div className="w-1/6 hidden md:flex justify-center items-center gap-2 font-medium">
+        <label htmlFor="Toggle2"  className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+
+          <span className="relative" >
+            <input id="Toggle2" type="checkbox" className="hidden peer " />
+            <div onClick={handleThemeSwitch} className="w-10 h-4 rounded-full shadow  bg-white/80"></div>
+            <div onClick={handleThemeSwitch} className="bg-black/90 absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto dark:bg-violet-400"></div>
+          </span>
+
+        </label>
         <img className="w-4" src={fb} alt="" />
         <img className="w-4" src={ig} alt="" />
         <img className="w-4" src={tw} alt="" />
         <img className="w-4" src={yt} alt="" />
       </div>
+
+
       {/* social icon end  */}
     </div>
   );
