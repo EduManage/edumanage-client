@@ -13,6 +13,7 @@ const Navbar = () => {
   const [navColorChange, setNavColorChange] = useState(false);
   const [open, setOpen] = useState(true);
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem('theme'))
   const handleLogout = () => {
     logOut().then(() => {
       // Sign-out successful.
@@ -30,6 +31,22 @@ const Navbar = () => {
     changeBackground();
     window.addEventListener("scroll", changeBackground);
   });
+
+  // Dark mode
+  useEffect(()=>{
+    if(theme === 'light'){
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'light')
+    } else{
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'dark')
+    }
+  },[theme])
+
+  const handleThemeSwitch = () =>{
+    setTheme(theme=== "dark" ? "light": "dark")
+    
+  }
   
   return (
     <div
@@ -78,6 +95,10 @@ const Navbar = () => {
 
       {/* auth section start */}
       <div className="text-xs w-2/3 md:w-1/6 flex justify-end items-center gap-2 font-medium">
+      <button className="btn btn-sm"
+      onClick={handleThemeSwitch}
+      >Dark</button>
+
         {user?.email ? (
           <div className="flex items-center gap-2">
             <div
