@@ -37,6 +37,7 @@ import InstructorDashboard from "../../Layout/IntructorDashboard/InstructorDashb
 import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
 import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
 import MyCourses from "../../Pages/SpecialCourses/MyCourses";
+import JobAdmin from "../../Pages/AdminDashboard/JobAdmin/JobAdmin";
 
 export const router = createBrowserRouter([
   {
@@ -72,7 +73,13 @@ export const router = createBrowserRouter([
         path: "/jobdetails/:id",
         element: <JobCareers />,
         loader: ({ params }) =>
-          fetch(`https://edumanage-server-bice.vercel.app/jobdetails/${params.id}`),
+          fetch(
+            `https://edumanage-server-bice.vercel.app/jobdetails/${params.id}`
+          ),
+      },
+      {
+        path: "/jobAdmin",
+        element: <JobAdmin />,
       },
       {
         path: "/all-instrutor",
@@ -111,8 +118,10 @@ export const router = createBrowserRouter([
       {
         path: "/courses/:id",
         element: <SingleCourse />,
-        loader: ({ params }) => fetch(`https://edumanage-server-ivory.vercel.app/courses/${params.id}`)
-
+        loader: ({ params }) =>
+          fetch(
+            `https://edumanage-server-ivory.vercel.app/courses/${params.id}`
+          ),
       },
       {
         path: "/all-instrutor",
@@ -136,7 +145,6 @@ export const router = createBrowserRouter([
       //   element: <InstructorDashboard />
       // },
       {
-
         path: "addNews",
         element: <AddNews />,
       },
@@ -146,13 +154,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/spCourses",
-        element: <SpecialCourses />
+        element: <SpecialCourses />,
       },
       {
-        path: 'myCourses',
-        element: <MyCourses />
-      }
-
+        path: "myCourses",
+        element: <MyCourses />,
+      },
     ],
   },
   {
@@ -161,8 +168,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AdminDashboardHome />
-
+        element: <AdminDashboardHome />,
       },
       {
         path: "/admin/add-students",
@@ -197,12 +203,12 @@ export const router = createBrowserRouter([
         element: <AllBooks></AllBooks>,
       },
       {
-        path: '/admin/addNews',
-        element: <AddNews />
+        path: "/admin/addNews",
+        element: <AddNews />,
       },
       {
-        path: '/admin/allNews',
-        element: <AllNews />
+        path: "/admin/allNews",
+        element: <AllNews />,
       },
     ],
   },
@@ -218,10 +224,7 @@ export const router = createBrowserRouter([
         path: "/instructordashboard/addcourses",
         element: <AddCourses />,
       },
-      {
-
-      }
-
+      {},
     ],
   },
 ]);
