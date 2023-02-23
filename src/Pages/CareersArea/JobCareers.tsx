@@ -25,19 +25,24 @@ const JobCareers = () => {
         <h1>{data.Learning}</h1>
         <ul>
           <li className="text-xl font-bold py-2">Qualifications</li>
-          {data.Qualifications.map((da: any, i: any) => (
-            <li>
-              {i + 1} {da}
-            </li>
-          ))}
+
+          {data
+            ? data.Qualifications
+            : data.Qualifications.map((da: any, i: any) => (
+                <li>
+                  {i + 1} {da}
+                </li>
+              ))}
         </ul>
         <ul>
           <li className="text-xl font-bold py-2">Responsibilities</li>
-          {data.Responsibilities.map((res: any, i: any) => (
-            <li>
-              {i + 1} {res}
-            </li>
-          ))}
+          {data
+            ? data.Responsibilities
+            : data.Responsibilities.map((res: any, i: any) => (
+                <li>
+                  {i + 1} {res}
+                </li>
+              ))}
         </ul>
         <div>
           <h1 className="text-3xl py-3 font-bold">Additional Information</h1>
@@ -48,11 +53,13 @@ const JobCareers = () => {
         </div>
         <ul>
           <li className="text-xl font-bold py-2">Job Details:</li>
-          {data.jovdescription.map((jovdes: any, i: any) => (
-            <li>
-              {i + 1} {jovdes}
-            </li>
-          ))}
+          {data
+            ? data.jovdescription
+            : data.jovdescription.map((jovdes: any, i: any) => (
+                <li>
+                  {i + 1} {jovdes}
+                </li>
+              ))}
         </ul>
         <h1>Job Time: {data.time}</h1>
         <Link to={"/careers"}>
