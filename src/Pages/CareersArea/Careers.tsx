@@ -7,7 +7,9 @@ const Careers = () => {
   const { data: careers = [] } = useQuery({
     queryKey: ["careers"],
     queryFn: () =>
-      fetch("https://edumanage-server-bice.vercel.app/careers").then((res) => res.json()),
+      fetch("https://edumanage-server-bice.vercel.app/careers").then((res) =>
+        res.json()
+      ),
   });
   const handleClick = (data: any) => {
     const jobId = data;
@@ -25,22 +27,30 @@ const Careers = () => {
       <h1 className="text-3xl font-bold text-center">Current Job Openings</h1>
       <div>
         <div>
-          <ul className="text-center mt-5 ">
-            {careers.map((jov: any) => (
-              <div className='border border-black my-1'>
-                <Link to={`/jobdetails/${jov._id}`} >
-                  <li
-                    className="text-xl py-1"
-                    key={jov._id}
-                    onClick={() => handleClick(jov._id)}
-                  >
-                    {jov.name}: {jov.jovname}
-                  </li>
-                </Link>
-              </div>
-
-            ))}
-          </ul>
+          <table className="table w-full table-compact my-5">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Job Name</th>
+                <th>Job Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {careers.map((jov: any, i: any) => (
+                <tr key={jov._id} className={`${i % 2 ? "" : "active"}`}>
+                  <td className="p-3 text-lg">{jov.name}</td>
+                  <td>{jov.jovname}</td>
+                  <td className="mx-0">
+                    <Link to={`/jobdetails/${jov._id}`}>
+                      <label className="bg-sky-400 hover:bg-sky-700 text-white font-bold py-1 px-4 rounded">
+                        Details
+                      </label>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
