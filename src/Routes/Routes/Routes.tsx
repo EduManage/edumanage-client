@@ -38,6 +38,7 @@ import AddCourses from "../../Layout/IntructorDashboard/AddCourses";
 import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
 import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 import JobAdmin from "../../Pages/AdminDashboard/JobAdmin/JobAdmin";
+import AllJob from "../../Pages/AdminDashboard/JobAdmin/AllJob/AllJob";
 
 export const router = createBrowserRouter([
   {
@@ -77,10 +78,7 @@ export const router = createBrowserRouter([
             `https://edumanage-server-bice.vercel.app/jobdetails/${params.id}`
           ),
       },
-      {
-        path: "/jobAdmin",
-        element: <JobAdmin />,
-      },
+
       {
         path: "/all-instrutor",
         element: <AllInstructor></AllInstructor>,
@@ -173,6 +171,14 @@ export const router = createBrowserRouter([
       {
         path: "/admin/add-students",
         element: <AddStudent></AddStudent>,
+      },
+      {
+        path: "/admin/jobAdmin",
+        element: <JobAdmin />,
+      },
+      {
+        path: "/admin/alljob",
+        element: <AllJob />,
       },
       {
         path: "/admin/all-students",

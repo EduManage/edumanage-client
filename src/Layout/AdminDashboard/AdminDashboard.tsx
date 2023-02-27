@@ -1,13 +1,31 @@
 import React from "react";
-import { AiFillDashboard, AiOutlineClose, AiTwotoneNotification } from "react-icons/ai";
+import {
+  AiFillDashboard,
+  AiOutlineClose,
+  AiTwotoneNotification,
+} from "react-icons/ai";
 import { HiMenu, HiUserGroup } from "react-icons/hi";
 import { ImManWoman } from "react-icons/im";
 import { CgNotes } from "react-icons/cg";
 import { FaBed, FaBook, FaHotTub, FaReadme } from "react-icons/fa";
 import { MdAccountBalance, MdGroup, MdHotelClass } from "react-icons/md";
-import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from "react-pro-sidebar";
-import { RiHealthBookFill, RiMapPin2Fill, RiMessage2Fill } from "react-icons/ri";
-import { BsChevronDown, BsChevronRight, BsFillCheckCircleFill } from "react-icons/bs";
+import {
+  Sidebar,
+  Menu,
+  MenuItem,
+  SubMenu,
+  useProSidebar,
+} from "react-pro-sidebar";
+import {
+  RiHealthBookFill,
+  RiMapPin2Fill,
+  RiMessage2Fill,
+} from "react-icons/ri";
+import {
+  BsChevronDown,
+  BsChevronRight,
+  BsFillCheckCircleFill,
+} from "react-icons/bs";
 import "./AdminDashboard.css";
 import { Link, Outlet } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
@@ -17,28 +35,59 @@ const AdminDashboard = () => {
     <div>
       <Navbar />
       <div className="section-admin-dashboard flex pt-20">
-
         <Sidebar backgroundColor="#042954">
-          <div className={`flex gap-5 ${collapsed ? "justify-center" : "justify-between"} items-center bg-[#3D5EE1] p-5`}>
-            {collapsed === false && <h2 className="font-bold text-2xl text-white">Admin</h2>}
+          <div
+            className={`flex gap-5 ${
+              collapsed ? "justify-center" : "justify-between"
+            } items-center bg-[#3D5EE1] p-5`}
+          >
+            {collapsed === false && (
+              <h2 className="font-bold text-2xl text-white">Admin</h2>
+            )}
 
-            {collapsed ? <HiMenu className="text-white text-2xl" onClick={() => collapseSidebar()}></HiMenu> : <AiOutlineClose className="text-3xl text-white" onClick={() => collapseSidebar()}></AiOutlineClose>}
+            {collapsed ? (
+              <HiMenu
+                className="text-white text-2xl"
+                onClick={() => collapseSidebar()}
+              ></HiMenu>
+            ) : (
+              <AiOutlineClose
+                className="text-3xl text-white"
+                onClick={() => collapseSidebar()}
+              ></AiOutlineClose>
+            )}
           </div>
           <Menu
             transitionDuration={700}
-            renderExpandIcon={({ open }: any) => <span>{open ? <BsChevronDown className={`forward-arrow ${collapsed === true && 'hidden'}`} /> : <BsChevronRight className={`backward-arrow ${collapsed === true && 'hidden'}`} />}</span>}
+            renderExpandIcon={({ open }: any) => (
+              <span>
+                {open ? (
+                  <BsChevronDown
+                    className={`forward-arrow ${
+                      collapsed === true && "hidden"
+                    }`}
+                  />
+                ) : (
+                  <BsChevronRight
+                    className={`backward-arrow ${
+                      collapsed === true && "hidden"
+                    }`}
+                  />
+                )}
+              </span>
+            )}
             menuItemStyles={{
               button: ({ level, active, disabled }: any) => {
                 // only apply styles on first level elements of the tree
                 if (level === 0)
                   return {
-                    color: disabled ? '#f5d9ff' : '#9EA8A8',
-                    backgroundColor: active ? '#051F3E' : undefined,
-                    transition: 'all 0.3s ease-in-out',
-                    borderBottom: '1px solid #021933',
-                    textAlign: 'left',
+                    color: disabled ? "#f5d9ff" : "#9EA8A8",
+                    backgroundColor: active ? "#051F3E" : undefined,
+                    transition: "all 0.3s ease-in-out",
+                    borderBottom: "1px solid #021933",
+                    textAlign: "left",
                     fontWeight: 500,
-                    fontFamily: 'Oswald',
+                    fontFamily: "Oswald",
                     "&:hover": {
                       backgroundColor: "#051F3E !important",
                       color: "#ffffff !important",
@@ -46,96 +95,101 @@ const AdminDashboard = () => {
                   };
                 if (level === 1)
                   return {
-                    color: disabled ? '#f5d9ff' : '#9EA8A8',
-                    backgroundColor: active ? '#051F3E' : '#051F3E',
-                    transition: 'all 0.3s ease-in-out',
-                    borderBottom: '1px solid #021933',
-                    textAlign: 'left',
+                    color: disabled ? "#f5d9ff" : "#9EA8A8",
+                    backgroundColor: active ? "#051F3E" : "#051F3E",
+                    transition: "all 0.3s ease-in-out",
+                    borderBottom: "1px solid #021933",
+                    textAlign: "left",
                     fontWeight: 500,
-                    fontFamily: 'Oswald',
+                    fontFamily: "Oswald",
                     "&:hover": {
                       backgroundColor: "#042954 !important",
                       color: "#ffffff !important",
                     },
-                  }
+                  };
               },
             }}
           >
-            <SubMenu
-              label="Dashboard"
-              icon={<AiFillDashboard />}
-            >
+            <SubMenu label="Dashboard" icon={<AiFillDashboard />}>
               <MenuItem component={<Link to="/courses" />}>Admin</MenuItem>
               <MenuItem component={<Link to="./" />}>Students</MenuItem>
               <MenuItem component={<Link to="./" />}>Parents</MenuItem>
               <MenuItem component={<Link to="./" />}>Teachers</MenuItem>
+              <MenuItem component={<Link to="./" />}>All Job </MenuItem>
             </SubMenu>
-            <SubMenu
-              label="Students"
-              icon={<ImManWoman />}
-            >
-              <MenuItem className="active" active={window.location.pathname === "./all-students"} component={<Link to="./all-students" />}>All Students</MenuItem>
-              <MenuItem component={<Link to="./students-details" />}>Students Details</MenuItem>
-              <MenuItem component={<Link to="./admission-form" />}>Admission Form</MenuItem>
-              <MenuItem component={<Link to="./add-students" />}>Add Students</MenuItem>
+            <SubMenu label="Students" icon={<ImManWoman />}>
+              <MenuItem
+                className="active"
+                active={window.location.pathname === "./all-students"}
+                component={<Link to="./all-students" />}
+              >
+                All Students
+              </MenuItem>
+              <MenuItem component={<Link to="./students-details" />}>
+                Students Details
+              </MenuItem>
+              <MenuItem component={<Link to="./admission-form" />}>
+                Admission Form
+              </MenuItem>
+              <MenuItem component={<Link to="./add-students" />}>
+                Add Students
+              </MenuItem>
             </SubMenu>
 
-            <SubMenu
-              label="Teachers"
-              icon={<HiUserGroup />}
-            >
-              <MenuItem component={<Link to="./all-teachers" />}>All Teachers</MenuItem>
+            <SubMenu label="Teachers" icon={<HiUserGroup />}>
+              <MenuItem component={<Link to="./all-teachers" />}>
+                All Teachers
+              </MenuItem>
               <MenuItem component={<Link to="./" />}>Teachers Details</MenuItem>
-              <MenuItem component={<Link to="./add-teachers" />}>Add Teacher</MenuItem>
+              <MenuItem component={<Link to="./add-teachers" />}>
+                Add Teacher
+              </MenuItem>
               <MenuItem component={<Link to="./" />}>Payments</MenuItem>
             </SubMenu>
-            <SubMenu
-              label="Parents"
-              icon={<MdGroup />}
-            >
-              <MenuItem component={<Link to="./all-parents" />}>All Parents</MenuItem>
+
+            <SubMenu label="Parents" icon={<MdGroup />}>
+              <MenuItem component={<Link to="./all-parents" />}>
+                All Parents
+              </MenuItem>
               <MenuItem component={<Link to="./" />}>Parents Details</MenuItem>
-              <MenuItem component={<Link to="./add-parents" />}>Add Parent</MenuItem>
+              <MenuItem component={<Link to="./add-parents" />}>
+                Add Parent
+              </MenuItem>
             </SubMenu>
-            <SubMenu
-              label="News"
-              icon={<FaReadme />}
-            >
+            <SubMenu label="News" icon={<FaReadme />}>
               <MenuItem component={<Link to="./allNews" />}>All News</MenuItem>
               <MenuItem component={<Link to="./addNews" />}>Add News</MenuItem>
             </SubMenu>
 
-
-
-            <SubMenu
-              label="Account"
-              icon={<MdAccountBalance />}
-            >
-              <MenuItem component={<Link to="./" />}>All Fees Collection</MenuItem>
+            <SubMenu label="Account" icon={<MdAccountBalance />}>
+              <MenuItem component={<Link to="./" />}>
+                All Fees Collection
+              </MenuItem>
               <MenuItem component={<Link to="./" />}>Expenses</MenuItem>
               <MenuItem component={<Link to="./" />}>Add Expenses</MenuItem>
             </SubMenu>
-            <SubMenu
-              label="Class"
-              icon={<MdHotelClass />}
-            >
+            <SubMenu label="Class" icon={<MdHotelClass />}>
               <MenuItem component={<Link to="./" />}>All Class</MenuItem>
               <MenuItem component={<Link to="./" />}>Add New Class</MenuItem>
             </SubMenu>
-            <SubMenu
-              label="Library"
-              icon={<FaReadme />}
-            >
-              <MenuItem component={<Link to="./all-books" />}>All Book</MenuItem>
-              <MenuItem component={<Link to="./add-books" />}>Add New Book</MenuItem>
+            <SubMenu label="Library" icon={<FaReadme />}>
+              <MenuItem component={<Link to="./all-books" />}>
+                All Book
+              </MenuItem>
+              <MenuItem component={<Link to="./add-books" />}>
+                Add New Book
+              </MenuItem>
+            </SubMenu>
+            <SubMenu label="Jobs" icon={<HiUserGroup />}>
+              <MenuItem component={<Link to="./alljob" />}>All Job</MenuItem>
+              <MenuItem component={<Link to="./" />}>Job Details</MenuItem>
+              <MenuItem component={<Link to="./jobAdmin" />}>Add Job</MenuItem>
+              <MenuItem component={<Link to="./" />}>Payments</MenuItem>
             </SubMenu>
             <MenuItem icon={<FaBook />}>Subject</MenuItem>
             <MenuItem icon={<RiHealthBookFill />}>Class Routing</MenuItem>
             <MenuItem icon={<BsFillCheckCircleFill />}>Attendance</MenuItem>
-            <SubMenu
-              label="Exam"
-              icon={<CgNotes />}
-            >
+            <SubMenu label="Exam" icon={<CgNotes />}>
               <MenuItem component={<Link to="./" />}>Exam Schedules</MenuItem>
               <MenuItem component={<Link to="./" />}>Exam Grades</MenuItem>
             </SubMenu>
