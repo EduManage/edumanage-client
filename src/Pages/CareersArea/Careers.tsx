@@ -65,7 +65,7 @@ const Careers = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-3xl font-bold text-center mt-20">
+      <h1 className="text-3xl font-bold text-center mt-20 mb-10">
         Current Job Openings
       </h1>
       <div>
