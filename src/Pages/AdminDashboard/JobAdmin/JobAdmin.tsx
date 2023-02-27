@@ -8,7 +8,7 @@ import { Textarea } from "../../StyleComponent/Textarea.styled";
 import DashboardTopHeader from "../DashboardTopHeader/DashboardTopHeader";
 
 const JobAdmin = () => {
-  useTitle("Add Teachers");
+  useTitle("Add Job");
   const [loading, setLoading] = useState(false);
   const {
     register,
