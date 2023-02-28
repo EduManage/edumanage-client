@@ -10,7 +10,6 @@ export const Input = styled.input`
     font-weight: 400;
     height: 45px;
     border-radius: 5px;
-    margin-bottom: 30px;
     transition: .15s ease-in-out;
 
     & ::placeholder{
