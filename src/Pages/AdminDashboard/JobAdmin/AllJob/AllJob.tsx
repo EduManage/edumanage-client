@@ -6,13 +6,40 @@ import { useTitle } from "../../../../hooks/useTitle";
 const Careers = () => {
   useTitle("All Job");
 
-  const { data: careers = [] } = useQuery({
+  const { data: careers = [], refetch } = useQuery({
     queryKey: ["careers"],
     queryFn: () =>
       fetch("https://edumanage-server-bice.vercel.app/careers").then((res) =>
         res.json()
       ),
   });
+  const handleClick = (data: any) => {
+    const jobId = data;
+    console.log(jobId);
+    fetch(`https://edumanage-server-sadid-git.vercel.app/jobdelete/${jobId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.data.acknowledged) {
+          toast.success("Delete job Successful!");
+
+          refetch();
+        }
+        if (data.success === false) {
+          toast.error("Delete job Fail!");
+        }
+      })
+      .catch((error) => {
+        toast.error("Delete Job Fail!");
+
+        console.log(error);
+      });
+  };
 
   return (
     <div className="p-20">
@@ -36,9 +63,7 @@ const Careers = () => {
                     <label
                       htmlFor="delete-modal"
                       className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
-                      // onClick={() =>
-                      //   handleDeleteModal(student?.name, student?._id)
-                      // }
+                      onClick={() => handleClick(jov._id)}
                     >
                       Delete
                     </label>
