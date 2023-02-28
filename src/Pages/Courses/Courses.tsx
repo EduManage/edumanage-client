@@ -75,7 +75,7 @@ const Courses = () => {
                             <select
                                 className=" select select-bordered select-sm w-48 outline-none max-w-xs">
                                 <option defaultValue={'Paid'} >Paid</option>
-                                <option>Premium</option>
+                                <option>Free</option>
 
                             </select>
                         </div>
@@ -84,7 +84,7 @@ const Courses = () => {
                             <select
                                 className=" select select-bordered select-sm w-48 outline-none max-w-xs">
                                 <option defaultValue={'Everything'} >Everything</option>
-                                <option defaultValue={'Paid'} >Web Development</option>
+                                <option>Web Development</option>
                                 <option>ChatGPT</option>
 
                             </select>

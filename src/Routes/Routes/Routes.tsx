@@ -39,6 +39,8 @@ import SpecialCourses from "../../Pages/SpecialCourses/SpecialCourses";
 import MyCourses from "../../Pages/SpecialCourses/MyCourses";
 import JobAdmin from "../../Pages/AdminDashboard/JobAdmin/JobAdmin";
 import AllJob from "../../Pages/AdminDashboard/JobAdmin/AllJob/AllJob";
+import MyInsCourses from "../../Layout/IntructorDashboard/MyInsCourses";
+
 
 export const router = createBrowserRouter([
   {
@@ -230,7 +232,10 @@ export const router = createBrowserRouter([
         path: "/instructordashboard/addcourses",
         element: <AddCourses />,
       },
-      {},
+      {
+        path: "/instructordashboard/mycourses",
+        element: <MyInsCourses />,
+      },
     ],
   },
 ]);

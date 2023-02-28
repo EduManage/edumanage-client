@@ -9,20 +9,21 @@ const InstructorDashboard = () => {
         <div className='mx-5'>
             <div className='flex flex-row items-center gap-5 justify-center w-full'>
                 <div className='bg-rose-100 p-16 rounded-xl text-center'>
-                    <h1 className='p-10 rounded-full bg-rose-400 text-2xl'>3</h1>
+                    <h1 className='py-12 px-12 rounded-full font-bold text-white bg-rose-400 text-4xl'>3</h1>
                     <h1 className='text-lg font-semibold'>Courses</h1>
 
                 </div>
-                <div className='bg-rose-100'>
-                    <h1 className='p-10 rounded-full bg-rose-400'>3</h1>
-                    <h1 className='text-lg font-semibold'>Courses</h1>
+                <div className='bg-rose-100 p-16 rounded-xl text-center'>
+                    <h1 className='py-12 px-12 rounded-full font-bold text-white bg-rose-400 text-4xl'>1</h1>
+                    <h1 className='text-lg font-semibold'>Draft</h1>
 
                 </div>
-                <div className='bg-rose-100'>
-                    <h1 className='p-10 rounded-full bg-rose-400'>3</h1>
-                    <h1 className='text-lg font-semibold'>Courses</h1>
+                <div className='bg-rose-100 p-16 rounded-xl text-center'>
+                    <h1 className='py-12 px-12 rounded-full font-bold text-white bg-rose-400 text-4xl'>0</h1>
+                    <h1 className='text-lg font-semibold'>Courses Sold</h1>
 
                 </div>
+                
 
             </div>
 

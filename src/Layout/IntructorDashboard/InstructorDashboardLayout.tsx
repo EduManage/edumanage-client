@@ -4,6 +4,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import './InstructorDashboard.css'
 import { AiFillFolderAdd, AiOutlineStar } from "react-icons/ai";
 import { MdOndemandVideo } from 'react-icons/md';
+import { FiSettings } from 'react-icons/fi';
 import { RxDashboard } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
@@ -29,11 +30,13 @@ const InstructorDashboardLayout = () => {
                         <div className='p-5 flex flex-col gap-3 items-start'>
                             <Link to='/instructordashboard'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><RxDashboard /><h1>Dashboard</h1></button></Link>
                             <hr className='h-[1px] w-full bg-black/50' />
-                            <Link to='/'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><MdOndemandVideo /><h1>My Courses</h1></button></Link>
+                            <Link to='/instructordashboard/mycourses'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><MdOndemandVideo /><h1>My Courses</h1></button></Link>
                             <hr className='h-[1px] w-full bg-black/50' />
                             <Link to='/instructordashboard/addcourses'> <button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><AiFillFolderAdd /><h1>Add Courses</h1></button></Link>
                             <hr className='h-[1px] w-full bg-black/50' />
-                            <Link to='/'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><AiOutlineStar /><h1>Reviews</h1></button></Link>
+                            <Link to='/instructordashboard/reviews'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><AiOutlineStar /><h1>Reviews</h1></button></Link>
+                            <hr className='h-[1px] w-full bg-black/50' />
+                            <Link to='/instructordashboard/reviews'><button className='flex justify-center items-center gap-2 font-bold text-black/50 hover:text-blue-500'><FiSettings /><h1>Settings</h1></button></Link>
                         </div>
                     </div>
                     <div className='w-4/5'>
