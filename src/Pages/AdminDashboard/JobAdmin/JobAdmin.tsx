@@ -20,7 +20,7 @@ const JobAdmin = () => {
   const onSubmit = async (data: any) => {
     console.log(data);
     setLoading(true);
-    fetch(`http://localhost:5000/addjob`, {
+    fetch(`https://edumanage-server-sadid-git.vercel.app/addjob`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
